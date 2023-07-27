@@ -7,4 +7,10 @@
 
  # Software_the_Pi_4_will_use.
 
- 
+ The list of software that will be used is as follows:
+
+ Built in software to the Raspberry Pi operation system.
+
+ 1. VNC
+ 2. Node Red
+ 3. 1 wire 
