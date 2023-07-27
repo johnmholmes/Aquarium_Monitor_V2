@@ -3,6 +3,9 @@
 
  This time around the Pi will be used in a different way than previously, this will be documented here to make it easier to build and diagnose issues if the arise.
 
+ The Pi will only have 3 sensors attached to it directly and these will be DS18B20 wtaer proof temperature sensors. This will require 1 wire commication to be setup using GPIO 4 Pin 7.
+ This I feel is important as it allows me to take regular reading and store them on a database on the Pi. This will be done using CRON running seperate python files which will be added to this repository.
+
  ------
 
  # Software_the_Pi_4_will_use.
