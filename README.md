@@ -15,8 +15,8 @@
 
  The list of software that will be used is as follows:
 
- Built in software to the Raspberry Pi operation system.
+ Built in software to the Raspberry Pi Operation System.
 
- 1. VNC
- 2. Node Red
- 3. 1 wire 
+ 1. VNC see the readme in the VNC folder.
+ 2. Node Red see the readme in the Node Red foler.
+ 3. 1 wire  see the readme in the 1 Wire folder.
