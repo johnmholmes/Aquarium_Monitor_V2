@@ -8,7 +8,7 @@ I am creating various Youtube videos so I can look back to remember how I went a
 
 https://youtu.be/Myc981ZMg3U
 
-covers why I needed a controller and made the version 2 of a Raspberry Pi.
+covers why I needed a controller and made the version 2 of a Raspberry Pi 4 4 gig model.
 
 ----
 
