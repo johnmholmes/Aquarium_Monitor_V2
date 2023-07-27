@@ -1,23 +1,17 @@
-# Aquarium_Monitor_V2
- The Raspberry Pi 4 4 Gig next generation of monitor for my marine tank.
+# YouTube Videos
 
- This time around the Pi 4 will be used in a different way than previously, this will be documented here to make it easier to build and diagnose issues if they arise.
+I am creating various Youtube videos so I can look back to remember how I went about setting up the Controller and these can help others to learn from my journey.
 
- The Pi 4 will only have 3 sensors attached to it directly and these will be DS18B20 water proof temperature sensors. This will require 1 wire commication to be setup using GPIO 4 Pin 7.
- This I feel is important as it allows me to take regular reading and store them on a database on the Pi 4. This will be done using CRON running seperate python files which will be added to this repository.
+----
 
- This will make it easier to remove and maintaine the Raspberry Pi and allow better cooling compared to the previous controller system. Everything else will be done using either ESP32 or Raspberry Pi Pico W using MQTT,
-  and the Pi $ will be the Broker using Node red to give a web brouser interface.
+# Part 1 
 
- ------
+https://youtu.be/Myc981ZMg3U
 
- # Software_the_Pi_4_will_use.
+covers why I needed a controller and made the version 2 of a Raspberry Pi.
 
- The list of software that will be used is as follows:
+----
 
- Built in software to the Raspberry Pi Operation System.
+# Part 2
 
- 1. VNC see the readme in the VNC folder.
- 2. 1 wire  see the readme in the 1 Wire folder.
 
- We will need to install Node Red on to the Raspberry Pi 4
