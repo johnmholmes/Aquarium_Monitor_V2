@@ -10,8 +10,14 @@
   and the Pi $ will be the Broker using Node red to give a web brouser interface.
 
  ------
+# Why_the_old_system_failed
 
- # Software_the_Pi_4_will_use.
+ By having the Raspberry Pi hard wired into everything I had used a PC power supply to give 3 different voltages 12 volt, 5 volts, and 3.3 volts. We had a lightning strike which has damaged the PC power Ssupply so the Pi 
+  was overloaded trying to run everry thing for 5 volts and 3.3 volts. Lesson learnt from this is to ensure if using one of these ensure surge protection is used.
+
+ ------
+
+# Software_the_Pi_4_will_use.
 
  The list of software that will be used is as follows:
 
