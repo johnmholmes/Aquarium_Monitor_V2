@@ -26,6 +26,10 @@ I then show some other setting I like to change before going on to install Node 
 
 # Part 3
 
+In this video I cover installing MQTT onto the Pi 4.
+
+----
+
 
 
 
