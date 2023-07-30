@@ -25,7 +25,7 @@ extern "C" {
 
 #define WIFI_SSID "VM0955199"                 // Change for your wifi
 #define WIFI_PASSWORD "ssDrqc8M5jxz"          // Change for your wifi
-#define MQTT_HOST IPAddress(192, 168, 0, 18)  // Raspberry Pi Mosquitto MQTT Broker
+#define MQTT_HOST IPAddress(192, 168, 0, 18)  // Change for your Pi Ip address
 #define MQTT_PORT 1883                        // Pi port used
 #define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature MQTT Topic
 #define MQTT_PUB_HEAT "Esp_Heater_Status"     // Temperature MQTT Topic
