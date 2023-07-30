@@ -27,11 +27,11 @@ extern "C" {
 #define WIFI_PASSWORD "ssDrqc8M5jxz"          // Change for your wifi
 #define MQTT_HOST IPAddress(192, 168, 0, 18)  // Change for your Pi Ip address
 #define MQTT_PORT 1883                        // Pi port used
-#define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature MQTT Topic
-#define MQTT_PUB_HEAT "Esp_Heater_Status"     // Temperature MQTT Topic
-const int oneWireBus = 4;                     // GPIO where the DS18B20 is connected to
+#define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature  reading MQTT Topic
+#define MQTT_PUB_HEAT "Esp_Heater_Status"     // Temperature heater status MQTT Topic
+const int oneWireBus = 4;                     // GPIO pin that the DS18B20 is connected to
 unsigned long previousMillis = 0;             // Stores last time temperature was published
-unsigned long thenMillis = 0;
+unsigned long thenMillis = 0;                 // Used in the time to publish
 const long interval = 60000;                  // Interval at which to publish sensor readings ever 30 seconds
 const long interval1 = 65000;                 // Interval to publish if heater is on or off
 float temp;                                   // Temperature value
@@ -60,7 +60,7 @@ void WiFiEvent(WiFiEvent_t event) {
       connectToMqtt();
       break;
     case SYSTEM_EVENT_STA_DISCONNECTED:
-      xTimerStop(mqttReconnectTimer, 0); // ensure we don't reconnect to MQTT while reconnecting to Wi-Fi
+      xTimerStop(mqttReconnectTimer, 0);   // ensure we don't reconnect to MQTT while reconnecting to Wi-Fi
       xTimerStart(wifiReconnectTimer, 0);
       break;
   }
