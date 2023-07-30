@@ -17,13 +17,27 @@
 
  ------
 
-# Software_the_Pi_4_will_use.
+# Controller_Requirements
 
- The list of software that will be used is as follows:
+The first priority is to have access to the Pi from anywhere in the world.  Completed.
 
- Built in software to the Raspberry Pi Operation System.
+-----
 
- 1. VNC see the readme in the VNC folder.
- 2. 1 wire  see the readme in the 1 Wire folder.
+# Work In Progress
 
- We will need to install Node Red on to the Raspberry Pi 4
+Temperature monitoring of Display, Sump, and Room via the Raspberry Pi. Work in progress.
+
+Temperature monitoring of the Display via a ESP32 with back up control of a single heater in the tank set to cut in if the Display temp drops below 23.5 Deg. This will use a heater with a thermerstat set at 25 Degs.
+
+Auto top of via a ESP32 this will monitor the sump level and report to the Pi as well as running the Ato pump, this will have a fail safe built in via a float switch incase the ESP32 fails.
+
+Display tank water level monitor to prevent over fill may osibly control on of the return pumps.
+
+Leak detection.
+
+Visual display via LEDs above the tank.
+
+----
+
+
+
