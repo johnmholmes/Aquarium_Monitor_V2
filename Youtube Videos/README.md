@@ -50,6 +50,8 @@ In this video we add a graph to the dashboard
 
 # Part 6
 
+https://youtu.be/UdKz4NOkaKk
+
 In this video we add a Ds18B20 sensor to the Raspberry Pi
 
 ----
