@@ -32,6 +32,28 @@ In this video I cover installing MQTT onto the Pi 4.
 
 ----
 
+# Part 4
 
+https://youtu.be/zB01cYhTQkM
+
+This video shows you how to get the dashboard nodes and create a simple gauge to show the Esp32 Temperature data.
+
+----
+
+# Part 5
+
+https://youtu.be/_u_CzhlTy-I
+
+In this video we add a graph to the dashboard
+
+----
+
+# Part 6
+
+https://youtu.be/UdKz4NOkaKk
+
+In this video we add a Ds18B20 sensor to the Raspberry Pi
+
+----
 
 
