@@ -17,13 +17,10 @@
 
  ------
 
-# Software_the_Pi_4_will_use.
+# Planned_Requirements
 
- The list of software that will be used is as follows:
+The first priority is to have access to the Pi from anywhere in the world. # Completed.
 
- Built in software to the Raspberry Pi Operation System.
 
- 1. VNC see the readme in the VNC folder.
- 2. 1 wire  see the readme in the 1 Wire folder.
 
- We will need to install Node Red on to the Raspberry Pi 4
+
