@@ -17,10 +17,26 @@
 
  ------
 
-# Planned_Requirements
+# Controller_Requirements
 
-The first priority is to have access to the Pi from anywhere in the world. # Completed.
+The first priority is to have access to the Pi from anywhere in the world.  Completed.
 
+-----
+
+# Work In Progress
+
+Temperature monitoring of Display, Sump, and Room via the Raspberry Pi. Work in progress.
+
+Temperature monitoring of the Display via a ESP32 with back up control of a single heater in the tank set to cut in if the Display temp drops below 23.5 Deg. This will use a heater with a thermerstat set at 25 Degs.
+
+Auto top of via a ESP32 this will monitor the sump level and report to the Pi as well as running the Ato pump, this will have a fail safe built in via a float switch incase the ESP32 fails.
+
+Display tank water level monitor to prevent over fill may osibly control on of the return pumps.
+
+Leak detection.
+
+Visual display via LEDs above the tank.
+----
 
 
 
