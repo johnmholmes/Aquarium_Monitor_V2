@@ -14,12 +14,18 @@ Additionally, I plan to incorporate an LED on Pin 40 with a ground connection on
  ------
 
 # Controller Requirements
-Access from anywhere in the world to monitor the iems I choose.
 
-Monitor the display tank, sump tank, and the room temperatures and display these in a Node Red gui.
+Access from anywhere in the world to monitor the items I choose is the primary goal of this project.
 
-Have acces to a 2nd micro controller (ESP32) to also monitor the Display tank and power a emergency heater. This will be set at a lower temperature than I normally room the tank at 23.5 Degs
+The system will be designed to monitor the display tank, sump tank, and room temperatures, presenting this data in a Node Red GUI.
 
+To achieve enhanced monitoring and safety measures, a second microcontroller (ESP32) will be utilized. This microcontroller will monitor the display tank and activate an emergency heater, set at a lower temperature (e.g., 23.5 degrees Celsius) than the standard tank temperature of 25.5 degrees Celsius.
+
+The project will also incorporate an auto top-off (ATO) system for the sump, which will utilize optical infrared sensors and a Tunzi pump in a 25-liter barrel located next to the sump. An ESP32 will monitor both the sump and the ATO barrel, communicating the data back to the Raspberry Pi via MQTT and displaying it on a Node Red Dashboard. The pump will be set to run for a designated period, requiring only one sensor in the sump.
+
+Furthermore, the system will include water level monitoring for the display tank to prevent overflows. This functionality will enable the system to turn off one of the return pumps for a specified duration, ensuring the water level remains within safe limits. An ESP32 with one optical infrared sensor will be responsible for this control.
+
+Lastly, the project will incorporate skimmer overflow container monitoring, automatically cutting off the supply to the skimmer when necessary.
 
 -----
 
