@@ -3,7 +3,7 @@
 In this project, I will be documenting my progress in designing and implementing the next generation of my marine tank monitor using the Raspberry Pi 4 with 4GB RAM. This documentation will serve as a reference for myself in the future, making it easy to look back on and make any necessary changes to the system. Additionally, I am sharing this journey with others so they may attempt something similar for themselves.
 
  ------
-# Why_I Am Making V2
+# WhyI Am Making V2
 
 The previous version of the monitor had everything hardwired into the Raspberry Pi 4, which made it challenging to maintain or implement any design improvements. Unfortunately, while I was on vacation, a lightning strike occurred, causing the Raspberry Pi to stop working. Additionally, the old PC power supply I had been using also failed, resulting in a loss of outside connectivity. Therefore, I decided to create a new version (V2) that would be more robust and easier to maintain, ensuring the monitor's uninterrupted functionality in the future.
 
@@ -13,7 +13,7 @@ Additionally, I plan to incorporate an LED on Pin 40 with a ground connection on
 
  ------
 
-# Controller_Requirements
+# Controller Requirements
 Access from anywhere in the world to monitor the iems I choose.
 
 Monitor the display tank, sump tank, and the room temperatures and display these in a Node Red gui.
