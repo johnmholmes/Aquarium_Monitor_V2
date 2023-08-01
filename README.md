@@ -1,31 +1,32 @@
-# Aquarium_Monitor_V2
- The Raspberry Pi 4 4 Gig next generation of monitor for my marine tank.
+#  Aquarium Monitor V2: The Raspberry Pi 4 4GB - Next Generation of My Marine Tank Monitor
 
- This time around the Pi 4 will be used in a different way than previously, this will be documented here to make it easier to build and diagnose issues if they arise.
-
- The Pi 4 will only have 3 sensors attached to it directly and these will be DS18B20 water proof temperature sensors. This will require 1 wire commication to be setup using GPIO 4 Pin 7.
- This I feel is important as it allows me to take regular reading and store them on a database on the Pi 4. This will be done using CRON running seperate python files which will be added to this repository.
-
- This will make it easier to remove and maintaine the Raspberry Pi and allow better cooling compared to the previous controller system. Everything else will be done using either ESP32 or Raspberry Pi Pico W using MQTT,
-  and the Pi $ will be the Broker using Node red to give a web brouser interface.
+In this project, I will be documenting my progress in designing and implementing the next generation of my marine tank monitor using the Raspberry Pi 4 with 4GB RAM. This documentation will serve as a reference for myself in the future, making it easy to look back on and make any necessary changes to the system. Additionally, I am sharing this journey with others so they may attempt something similar for themselves.
 
  ------
-# Why_the_old_system_failed
+# Why_I Am Making V2
 
- By having the Raspberry Pi hard wired into everything I had used a PC power supply to give 3 different voltages 12 volt, 5 volts, and 3.3 volts. We had a lightning strike which has damaged the PC power Ssupply so the Pi 
-  was overloaded trying to run everry thing for 5 volts and 3.3 volts. Lesson learnt from this is to ensure if using one of these ensure surge protection is used.
+The previous version of the monitor had everything hardwired into the Raspberry Pi 4, which made it challenging to maintain or implement any design improvements. Unfortunately, while I was on vacation, a lightning strike occurred, causing the Raspberry Pi to stop working. Additionally, the old PC power supply I had been using also failed, resulting in a loss of outside connectivity. Therefore, I decided to create a new version (V2) that would be more robust and easier to maintain, ensuring the monitor's uninterrupted functionality in the future.
 
  ------
 
 # Controller_Requirements
 
-The first priority is to have access to the Pi from anywhere in the world.  Completed.
+
 
 -----
 
+# Work Completed
+
+Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world.
+
+Temperature monitoring of Display, Sump, and Room via the Raspberry Pi.
+
+See the flow in Node red
+----
+
 # Work In Progress
 
-Temperature monitoring of Display, Sump, and Room via the Raspberry Pi. Work in Progress.
+
 
 Temperature monitoring of the Display via a ESP32 with back up control of a single heater in the tank set to cut in if the Display temp drops below 23.5 Deg. This will use a heater with a thermerstat set at 25 Degs. Work in Progress
 
