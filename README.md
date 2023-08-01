@@ -27,6 +27,8 @@ Furthermore, the system will include water level monitoring for the display tank
 
 Lastly, the project will incorporate skimmer overflow container monitoring, automatically cutting off the supply to the skimmer when necessary.
 
+More items will be added later on.
+
 -----
 
 # Work Completed
