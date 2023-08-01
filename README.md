@@ -7,10 +7,18 @@ In this project, I will be documenting my progress in designing and implementing
 
 The previous version of the monitor had everything hardwired into the Raspberry Pi 4, which made it challenging to maintain or implement any design improvements. Unfortunately, while I was on vacation, a lightning strike occurred, causing the Raspberry Pi to stop working. Additionally, the old PC power supply I had been using also failed, resulting in a loss of outside connectivity. Therefore, I decided to create a new version (V2) that would be more robust and easier to maintain, ensuring the monitor's uninterrupted functionality in the future.
 
+The new controller will only have a small number of items hardwired to it. Specifically, there will be 3 DS18B20 waterproof temperature sensors utilizing the 1-wire protocol on the Raspberry Pi 4. The breakout board will connect the bus wire to Pin 4 on the Pi, and I will draw 3.3 volts from Pin 1 while grounding will be supplied from Pin 6.
+
+Additionally, I plan to incorporate an LED on Pin 40 with a ground connection on Pin 34. To protect the LED from the 3.3-volt supply from the Pi, I will use a 220-ohm resistor to proctect it.
+
  ------
 
 # Controller_Requirements
+Access from anywhere in the world to monitor the iems I choose.
 
+Monitor the display tank, sump tank, and the room temperatures and display these in a Node Red gui.
+
+Have acces to a 2nd micro controller (ESP32) to also monitor the Display tank and power a emergency heater. This will be set at a lower temperature than I normally room the tank at 23.5 Degs
 
 
 -----
@@ -21,7 +29,7 @@ Give acces to the Raspberry Pi via VNC so I can access and control the Pi from a
 
 Temperature monitoring of Display, Sump, and Room via the Raspberry Pi.
 
-See the flow in Node red
+
 ----
 
 # Work In Progress
