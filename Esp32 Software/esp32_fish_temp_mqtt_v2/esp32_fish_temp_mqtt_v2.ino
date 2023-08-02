@@ -5,13 +5,12 @@
    This sketch is still being developed and is used for demonstration purposes only for the YouTube
    vidoes. The most upto date version can be found on my github account
    https://github.com/johnmholmes/Aquarium_Monitor_V2
-
-   
    */
 
 //Include the following libraries required for this to workyou may need to add them to your libraries 
 
 #include <WiFi.h>
+#include <Secret.h>
 extern "C" {
 #include "freertos/FreeRTOS.h"
 #include "freertos/timers.h"
