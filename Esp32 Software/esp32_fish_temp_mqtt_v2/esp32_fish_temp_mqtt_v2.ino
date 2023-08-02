@@ -5,6 +5,16 @@
    This sketch is still being developed and is used for demonstration purposes only for the YouTube
    vidoes. The most upto date version can be found on my github account
    https://github.com/johnmholmes/Aquarium_Monitor_V2
+
+   Since making the first video showing this I have changed my WIFI login and Password for security this
+   requires a few extra lines of code to remove my details from the github pages. 
+   
+   #include <Secret.h>                              ADDED CODE
+
+   const char ssid[] = WIFI_SSID;                   CHANGED CODE
+   const char password[] = WIFI_PASSWORD;           CHANGED CODE
+
+   WiFi.begin(ssid, password);                      CHANGED CODE
    */
 
 //Include the following libraries required for this to workyou may need to add them to your libraries 
@@ -21,9 +31,8 @@ extern "C" {
 // End of libraries
 
 //These are the variables that need to be setup by the user
-
-#define WIFI_SSID "VM0955199"                 // Change for your wifi
-#define WIFI_PASSWORD "ssDrqc8M5jxz"          // Change for your wifi
+const char ssid[] = WIFI_SSID;
+const char password[] = WIFI_PASSWORD;
 #define MQTT_HOST IPAddress(192, 168, 0, 18)  // Change for your Pi Ip address
 #define MQTT_PORT 1883                        // Pi port used
 #define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature  reading MQTT Topic
@@ -46,7 +55,7 @@ TimerHandle_t mqttReconnectTimer;
 TimerHandle_t wifiReconnectTimer;
 
 void connectToWifi() {
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  WiFi.begin(ssid, password);
 }
 
 void connectToMqtt() {
