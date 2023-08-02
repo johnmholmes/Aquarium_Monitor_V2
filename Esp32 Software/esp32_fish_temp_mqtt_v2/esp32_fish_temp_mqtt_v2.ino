@@ -15,6 +15,12 @@
    const char password[] = WIFI_PASSWORD;           CHANGED CODE
 
    WiFi.begin(ssid, password);                      CHANGED CODE
+
+   See https://github.com/arduino-libraries/WiFi/tree/master for more details on wifi.h
+   See https://github.com/maniacbug/FreeRTOS/blob/master/FreeRTOS.h see for more details on FreeRTOS.h
+   See https://github.com/marvinroger/async-mqtt-client/tree/develop for more detail on async-mqtt-client.h 
+   See https://github.com/PaulStoffregen/OneWire for more details on OneWire.h
+   See https://github.com/milesburton/Arduino-Temperature-Control-Library for more details on the DallasTemp.h
    */
 
 //Include the following libraries required for this to workyou may need to add them to your libraries 
