@@ -89,9 +89,9 @@ void onMqttPublish(uint16_t packetId) {
 void setup() {
   
   sensors.begin();              // Start the DS18B20 sensor
-  pinMode(2, OUTPUT);           // setup an output on pin 2
-  pinMode(23, OUTPUT);          // setup an output on pin 23
-  Serial.begin(115200);
+  pinMode(2, OUTPUT);           // setup Led on Pin 2 for heart beat
+  pinMode(23, OUTPUT);          // setup a solid state realy to control 240 volts AC
+  Serial.begin(115200);         // Used for debug only print statements removed already
 
   mqttReconnectTimer = xTimerCreate("mqttTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToMqtt));
   wifiReconnectTimer = xTimerCreate("wifiTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToWifi));
