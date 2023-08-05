@@ -46,7 +46,7 @@ const char password[] = WIFI_PASSWORD;
 const int oneWireBus = 4;                     // GPIO pin that the DS18B20 is connected to
 unsigned long previousMillis = 0;             // Stores last time temperature was published
 unsigned long thenMillis = 0;                 // Used in the time to publish
-const long interval = 60000;                  // Interval at which to publish sensor readings ever 30 seconds
+const long interval = 60000;                  // Interval at which to publish sensor readings ever 60 seconds
 const long interval1 = 65000;                 // Interval to publish if heater is on or off
 float temp;                                   // Temperature value
 
