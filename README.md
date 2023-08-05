@@ -35,14 +35,14 @@ More items will be added later on.
 
 Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world.
 
-Temperature monitoring of Display, Sump, and Room via the Raspberry Pi.
+
 
 
 ----
 
 # Work In Progress
 
-
+Temperature monitoring of Display, Sump, and Room via the Raspberry Pi.See the folder Heater control
 
 Temperature monitoring of the Display via a ESP32 with back up control of a single heater in the tank set to cut in if the Display temp drops below 23.5 Deg. This will use a heater with a thermerstat set at 25 Degs. Work in Progress
 
