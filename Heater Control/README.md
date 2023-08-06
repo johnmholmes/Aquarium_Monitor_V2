@@ -1,14 +1,22 @@
 #  Heater Control
 
+# 6 August
+
+An interesting occurrence took place last night when one of my return pumps, which has been in operation for over four years, experienced a failure around midnight. Fortunately, this incident did not disrupt the tank significantly; it merely led to a minor decrease in the water level within the display. Interestingly, this event was reflected in the data recorded on the graphs and gauges, as the display temperature exhibited a difference of 1.5 degrees Celsius lower than that of the sump.
+
+This occurrence serves to reinforce my inclination to implement a separate heater within the display in the near future. Such a precaution would act as a safeguard against potential reoccurrences of similar incidents, offering an added layer of protection and stability to the tank's environment.
+
+----
+
 # 5 August update.
 
-The tank will still be using the DD Aquarium controller as the main supply, however I may add a relay cutout incase the unit ever fails leving the heaters switched on. The reason for this is I do have one of their heater that does not have an inbuilt thermostat in it. In the number of years I have been using it, it has never failed but as will all old equipment they say you should replace them after so long.
+The tank will continue to rely on the DD Aquarium controller as its primary heater power source. However, I am considering incorporating a relay cutout as a precautionary measure in case the unit ever malfunctions and leaves the heaters running continuously. This additional feature is particularly relevant due to the presence of one heater within the setup that lacks an integrated thermostat. While this particular heater has performed reliably over the years, it's important to acknowledge that all aging equipment should be considered for replacement after a certain period of use.
 
 -----
 
 # 4 August update.
-Even though I have shown a few different ideas on the YouTube Channel I am Still experimenting with a few Ideas. In Video 10 I showed a node that brought all 3 sensors reading in an array which looked very good. However after playing around with it I am slowly looking at the first method again, as I can avoid the false readings at startup and after deploying the flows after changes.
+Although I have presented several different ideas on the YouTube Channel, I am still experimenting with a few concepts. In Video 10, I demonstrated a node that consolidated readings from all three sensors into an array, resulting in a visually appealing outcome. However, after further experimentation, I am gradually reconsidering the initial method. This reconsideration stems from the potential to eliminate false readings during startup and after deploying changes to the flows.
 
-I am still undecided whether I will use a GPIO pin on the Pi to control a solid state relay to turn on the emergency heater in the display or leave that to the ESP32.
+Currently, I am undecided on whether to employ a GPIO pin on the Pi for controlling a solid-state relay to activate the emergency heater in the display, or if I should delegate this task to the ESP32.
 
-The graphs and gauges are all sorted so that part of the controller is complete, Work is under way on the Raspberry Pi encloser which will be compeleted in the next few days, once complete the deisgnwill be finalised and a video will be produced
+The graphs and gauges have all been organized, marking the completion of that aspect of the controller. Progress is being made on the Raspberry Pi enclosure, which should be finished in the next few days. Once the enclosure is complete, the design will be finalized, and a video will be produced to showcase the entire project.
