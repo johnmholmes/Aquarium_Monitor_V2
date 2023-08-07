@@ -1,4 +1,4 @@
-#  Heater Control
+#  Heater Control Blog
 
 # 7 August
 
