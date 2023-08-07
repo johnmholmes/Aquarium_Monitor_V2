@@ -1,5 +1,11 @@
 #  Heater Control
 
+# 7 August
+
+The day has been spent working on getting the database working, but more work will be needed. I now have a Python script running using a crontab 1 every hour adding the reading into a database called john.db. I need to look at the data type and the details I want to add to it. So far I have not been able to pull the data and add it to a graph as its pulling the information but in the wrong data type by the look of it. I will only be using this to record the display temperture every hour. This will then put into a graph to show 1 weeks worth of data which requires 168 reading.
+
+----
+
 # 6 August.
 
 An interesting occurrence took place last night when one of my return pumps, which has been in operation for over four years, experienced a failure around midnight. Fortunately, this incident did not disrupt the tank significantly; it merely led to a minor decrease in the water level within the display. Interestingly, this event was reflected in the data recorded on the graphs and gauges, as the display temperature exhibited a difference of 1.5 degrees Celsius lower than that of the sump.
