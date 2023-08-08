@@ -6,7 +6,7 @@ to edit the cron we need to go into a terminal window and type " crontab - e" an
 
 Here is the website I would recomend to work out what the schedule that you require.
 
-https://crontab.guru/#0_*_*_*_*
+[https://crontab.guru/#0_*_*_*_*](https://crontab.guru/#*_*_*_*_*)
 
 I also show this in video 14 on the Youtube channel.
 
