@@ -40,9 +40,11 @@ Give acces to the Raspberry Pi via VNC so I can access and control the Pi from a
 
 ----
 
-# Work In Progress
+# Temperature Monitoring
 
-Temperature monitoring of Display, Sump, and Room via the Raspberry Pi.See the folder Heater control
+This is an on going part of the project due to a number of reasons, the first being the scope of the project is still being developped.
+
+Temperature monitoring of the Display tank, Sump tank, and  Living Room via Node Red. This has been sort of shown already in a number of video. However I am still to be convinced as to the best approach to take for my final build. It seems that the available Nodes when working with the DS18B20 sesnsor cause flow stalling, which is not the biggest issue for me at the moment, but the false reading are my concern. The debate I am having with myself is should I switch all the DS18B20 to a single ESP32 and just use MQTT to send the data to the Raspberry Pi. I will continue to learn Java to see if I can just filter out the fasle reading so the graph does not show them.
 
 Temperature monitoring of the Display via a ESP32 with back up control of a single heater in the tank set to cut in if the Display temp drops below 23.5 Deg. This will use a heater with a thermerstat set at 25 Degs. Work in Progress
 
