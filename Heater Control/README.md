@@ -1,5 +1,17 @@
 #  Heater Control Blog
 
+
+# 9 August
+
+The stray reading are annoying though they maybe due to bad connections as when I move the pi one sensor reported 80 DEG C. I am tempeted to move all the ds18b20 sensors to a ESP32 as I have been reading up on the Node Red forum that this can cuse a flow stall for 2 or more seconds depending on how many sensors you have connected. By moving them to the Esp32 and using the MQTT to send the data leaves the Node Red not to stall. So far I have not seen any issues with the 1 sensor on the ESP32.
+
+----
+
+# 8 August
+
+Spent today working on a Tkinter Gui to work with the temperature reading using also sqlite database this was taking reading from a crontab python file.
+----
+
 # 7 August
 
 The day has been spent working on getting the database working, but more work will be needed. I now have a Python script running using a crontab 1 every hour adding the reading into a database called john.db. I need to look at the data type and the details I want to add to it. So far I have not been able to pull the data and add it to a graph as its pulling the information but in the wrong data type by the look of it. I will only be using this to record the display temperture every hour. This will then put into a graph to show 1 weeks worth of data which requires 168 reading.
