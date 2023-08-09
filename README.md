@@ -8,7 +8,7 @@ Please beaware I may well change my approach to this project but will leave the 
 
  # Latest News Will Appear Here
 
-The current planned change is to move away from using the sensors connected to the Raspberrry PI and to just use the Raspberry Pi 4 as a IOT  running MQTT & Node Red servers.
+The decision has been made to just use the Raspberry Pi as a server which will controll the aquarium , but I will not have any sensors attached to it. This has come about after doing more researcch on the Ds18b20 temperature sensors. These are better off being controlled by the cheap ESP32 units The code should not be that difficult to amend on the verion you have ssen running already.
 
  ------
 
