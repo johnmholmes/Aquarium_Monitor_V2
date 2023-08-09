@@ -4,7 +4,7 @@ In this project, I will document my progress in designing and implementing the n
 
  ------
 
-#Languages Used 
+# Languages Used 
 
  The skills required to be able to program the Raspberry Pi will depend on what you are hoping to do, However in my case I will be using 3 different coding lamguages depending on the poticular requirements.
 
