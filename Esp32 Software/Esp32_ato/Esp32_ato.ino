@@ -27,7 +27,7 @@ Variables used for WiFi and MQTT used by the libraries
 
 const char ssid[] = WIFI_SSID;
 const char password[] = WIFI_PASSWORD;
-#define MQTT_HOST IPAddress(192, 168, 0, 18)        // Raspberry Pi Mosquitto MQTT Broker address
+#define MQTT_HOST IPAddress(192, 168, 0, 30)        // Raspberry Pi Mosquitto MQTT Broker address
 #define MQTT_PORT 1883                              // Raspery Pi Port number do not alter
 #define MQTT_PUB_LEVEL_CHECK "ATO_Sump_Check"       // This gives the topic name used to transmit the message
 #define MQTT_PUB_HEART_BEAT "ATO_Heart_Beat"        // The payload is decided in the void loop depending on what you wish to send
