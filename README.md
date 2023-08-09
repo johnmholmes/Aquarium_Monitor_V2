@@ -3,6 +3,27 @@
 In this project, I will document my progress in designing and implementing the next generation of my marine tank monitor using the Raspberry Pi 4 with 4GB of RAM. This documentation will serve as a future reference, allowing me to easily revisit and make any necessary changes to the system. Moreover, I am sharing this journey with others, enabling them to embark on similar endeavors.
 
  ------
+
+#Languages Used 
+
+ The skills required to be able to program the Raspberry Pi will depend on what you are hoping to do, However in my case I will be using 3 different coding lamguages depending on the poticular requirements.
+
+ Python
+
+ This will be used in certain script to controll GPIO or even database insertion.
+
+ JavaScritp
+
+ This is used for Node Red it works great in fuction Nodes as well as altering the GUI appearance.
+
+ C/C++
+
+ This is used for controlling the external modules.
+
+ I am not a proffesional programmer but self taught from various sorces Books, Internet tutorial sites and Youtube videos. I got back into coding only 5 years ago, before that it was basic programming for the old z81 computers and the Amiga's
+
+ ------
+ 
 # WhyI Am Making V2
 
 The earlier version of the monitor had all components hardwired into the Raspberry Pi 4, posing challenges for maintenance and implementing design enhancements. Regrettably, during my vacation, a lightning strike occurred, rendering the Raspberry Pi inoperable. Simultaneously, the old PC power supply I was utilizing also malfunctioned, resulting in a loss of external connectivity. Consequently, I made the decision to develop a new and improved iteration (V2) that would possess enhanced durability and ease of maintenance, thereby ensuring the continuous functionality of the monitor in the future.
