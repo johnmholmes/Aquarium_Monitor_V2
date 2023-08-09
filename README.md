@@ -20,7 +20,8 @@ In this project, I will document my progress in designing and implementing the n
 
  This is used for controlling the external modules.
 
- I am not a proffesional programmer but self taught from various sorces Books, Internet tutorial sites and Youtube videos. I got back into coding only 5 years ago, before that it was basic programming for the old z81 computers and the Amiga's
+ I am not a proffesional programmer but self taught from various sorces Books, Internet tutorial sites and Youtube videos. I got back into coding only 5 years ago, before that it was basic programming for the old z81 
+ computers and the Amiga's
 
  ------
  
