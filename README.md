@@ -1,33 +1,35 @@
 #  Aquarium Monitor V2: The Raspberry Pi 4 4GB - Next Generation of My Marine Tank Monitor
 
-In this project, I will be documenting my progress in designing and implementing the next generation of my marine tank monitor using the Raspberry Pi 4 with 4GB RAM. This documentation will serve as a reference for myself in the future, making it easy to look back on and make any necessary changes to the system. Additionally, I am sharing this journey with others so they may attempt something similar for themselves.
+In this project, I will document my progress in designing and implementing the next generation of my marine tank monitor using the Raspberry Pi 4 with 4GB of RAM. This documentation will serve as a future reference, allowing me to easily revisit and make any necessary changes to the system. Moreover, I am sharing this journey with others, enabling them to embark on similar endeavors.
 
  ------
 # WhyI Am Making V2
 
-The previous version of the monitor had everything hardwired into the Raspberry Pi 4, which made it challenging to maintain or implement any design improvements. Unfortunately, while I was on vacation, a lightning strike occurred, causing the Raspberry Pi to stop working. Additionally, the old PC power supply I had been using also failed, resulting in a loss of outside connectivity. Therefore, I decided to create a new version (V2) that would be more robust and easier to maintain, ensuring the monitor's uninterrupted functionality in the future.
+The earlier version of the monitor had all components hardwired into the Raspberry Pi 4, posing challenges for maintenance and implementing design enhancements. Regrettably, during my vacation, a lightning strike occurred, rendering the Raspberry Pi inoperable. Simultaneously, the old PC power supply I was utilizing also malfunctioned, resulting in a loss of external connectivity. Consequently, I made the decision to develop a new and improved iteration (V2) that would possess enhanced durability and ease of maintenance, thereby ensuring the continuous functionality of the monitor in the future.
 
-The new controller will only have a small number of items hardwired to it. Specifically, there will be 3 DS18B20 waterproof temperature sensors utilizing the 1-wire protocol on the Raspberry Pi 4. The breakout board will connect the bus wire to Pin 4 on the Pi, and I will draw 3.3 volts from Pin 1 while grounding will be supplied from Pin 6.
+The new controller will feature only a select number of components hardwired to it. Precisely, it will integrate 3 DS18B20 waterproof temperature sensors that employ the 1-wire protocol on the Raspberry Pi 4. A breakout board will link the bus wire to Pin 4 on the Pi. Power at 3.3 volts will be drawn from Pin 1, while grounding will be established through Pin 6.
 
-Additionally, I plan to incorporate an LED on Pin 40 with a ground connection on Pin 34. To protect the LED from the 3.3-volt supply from the Pi, I will use a 220-ohm resistor to proctect it.
+Furthermore, I intend to integrate an LED on Pin 40, with its ground connection established on Pin 34. To safeguard the LED from the 3.3-volt supply originating from the Pi, I will employ a 220-ohm resistor for protection.
+
+Although this may change during the development of the project.
 
  ------
 
 # Controller Requirements
 
-Access from anywhere in the world to monitor the items I choose is the primary goal of this project.
+The primary objective of this project is to establish worldwide accessibility for monitoring selected items.
 
-The system will be designed to monitor the display tank, sump tank, and room temperatures, presenting this data in a Node Red GUI.
+The system's design will encompass the monitoring of temperatures in the display tank, sump tank, and room. This data will be presented through a Node Red GUI.
 
-To achieve enhanced monitoring and safety measures, a second microcontroller (ESP32) will be utilized. This microcontroller will monitor the display tank and activate an emergency heater, set at a lower temperature (e.g., 23.5 degrees Celsius) than the standard tank temperature of 25.5 degrees Celsius.
+To achieve heightened monitoring and safety protocols, an additional microcontroller (ESP32) will be employed. This microcontroller will oversee the display tank and activate an emergency heater set to a lower temperature (e.g., 23.5 degrees Celsius) than the standard tank temperature of 25.5 degrees Celsius.
 
-The project will also incorporate an auto top-off (ATO) system for the sump, which will utilize optical infrared sensors and a Tunzi pump in a 25-liter barrel located next to the sump. An ESP32 will monitor both the sump and the ATO barrel, communicating the data back to the Raspberry Pi via MQTT and displaying it on a Node Red Dashboard. The pump will be set to run for a designated period, requiring only one sensor in the sump.
+Furthermore, the project will feature an auto top-off (ATO) system for the sump. This system will integrate optical infrared sensors and a Tunzi pump situated within a 25-liter barrel adjacent to the sump. An ESP32 will oversee both the sump and ATO barrel, relaying the collected data to the Raspberry Pi via MQTT, which will then be displayed on a Node Red Dashboard. The pump will be programmed to operate for a specific duration, necessitating only one sensor in the sump.
 
-Furthermore, the system will include water level monitoring for the display tank to prevent overflows. This functionality will enable the system to turn off one of the return pumps for a specified duration, ensuring the water level remains within safe limits. An ESP32 with one optical infrared sensor will be responsible for this control.
+Additionally, the system will incorporate water level monitoring for the display tank to prevent overflow incidents. This functionality will empower the system to temporarily halt one of the return pumps, ensuring the water level remains within safe parameters. Control of this function will be assigned to an ESP32, equipped with a single optical infrared sensor.
 
-Lastly, the project will incorporate skimmer overflow container monitoring, automatically cutting off the supply to the skimmer when necessary.
+Lastly, the project will involve the monitoring of the skimmer overflow container, automatically ceasing the supply to the skimmer when required.
 
-More items will be added later on.
+Subsequent components will be incorporated as the project progresses.
 
 -----
 
@@ -42,12 +44,11 @@ Give acces to the Raspberry Pi via VNC so I can access and control the Pi from a
 
 # Temperature Monitoring
 
-This is an on going part of the project due to a number of reasons, the first being the scope of the project is still being developped.
+This ongoing aspect of the project is currently in progress due to various reasons, with the primary one being the evolving nature of the project's scope.
 
-Temperature monitoring of the Display tank, Sump tank, and  Living Room via Node Red. This has been sort of shown already in a number of video. However I am still to be convinced as to the best approach to take for my final build. It seems that the available Nodes when working with the DS18B20 sesnsor cause flow stalling, which is not the biggest issue for me at the moment, but the false reading are my concern. The debate I am having with myself is should I switch all the DS18B20 to a single ESP32 and just use MQTT to send the data to the Raspberry Pi. I will continue to learn Java to see if I can just filter out the fasle reading so the graph does not show them.
+Temperature monitoring involves the Display tank, Sump tank, and Living Room, all facilitated through Node Red. This has been partially demonstrated in several videos. However, I am still in the process of determining the optimal approach for the final implementation. Presently, I'm grappling with the challenge of flow stalling caused by the available Nodes when working with the DS18B20 sensor. While flow stalling isn't my foremost concern at the moment, I am more troubled by the occurrence of false readings. I am engaged in a personal deliberation regarding whether I should transition all the DS18B20 sensors to a single ESP32, utilizing MQTT to transmit the data to the Raspberry Pi. Concurrently, I am dedicating myself to further learning in Java to investigate the possibility of filtering out these erroneous readings, thereby preventing their display on the graph.
 
-Temperature monitoring of the Display via a ESP32 with back up control of a single heater in the tank set to cut in if the Display temp drops below 23.5 Deg. This will use a heater with a thermerstat set at 25 Degs. Work in Progress
-
+Another facet of the project pertains to temperature monitoring solely in the Display tank, wherein an ESP32 is employed. This ESP32 also encompasses contingency control over a single heater within the tank, configured to activate if the Display temperature falls below 23.5 degrees Celsius. This secondary heater is equipped with a thermostat set at 25 degrees Celsius. This component is still a work in progress and under development.
 ----
 
 # To Be Started
