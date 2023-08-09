@@ -8,7 +8,7 @@ Please beaware I may well change my approach to this project but will leave the 
 
  # Latest News Will Appear Here
 
-The current planned change is to move away from using the sensors connected to the Raspberrry PI and to just use the Raspberry Pi 4 as a MQTT & Node Red servers.
+The current planned change is to move away from using the sensors connected to the Raspberrry PI and to just use the Raspberry Pi 4 as a IOT  running MQTT & Node Red servers.
 
  ------
 
