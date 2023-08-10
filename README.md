@@ -65,7 +65,8 @@ Subsequent components will be incorporated as the project progresses.
  
 # Work Completed
 
-    1. Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world, See the folder Node Red for details.
+   1. Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world. See the folder VNC for details.
+   2. Install Node Red to create a Graphical User Interface. See Node Red Folder for details
 
 ----
 
