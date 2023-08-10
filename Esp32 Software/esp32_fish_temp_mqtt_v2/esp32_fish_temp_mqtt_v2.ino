@@ -26,7 +26,7 @@
 //Include the following libraries required for this to workyou may need to add them to your libraries 
 
 #include <WiFi.h>
-#include <Secret.h>
+#include <Secret.h> // See video how to setup this file.
 extern "C" {
 #include "freertos/FreeRTOS.h"
 #include "freertos/timers.h"
@@ -34,47 +34,68 @@ extern "C" {
 #include <AsyncMqttClient.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+
 // End of libraries
 
-//These are the variables that need to be setup by the user
+// These are the variables that need to be setup by the user
 const char ssid[] = WIFI_SSID;
 const char password[] = WIFI_PASSWORD;
 #define MQTT_HOST IPAddress(192, 168, 0, 30)  // Change for your Pi Ip address
 #define MQTT_PORT 1883                        // Pi port used
-#define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature  reading MQTT Topic
+
+/* The next two lines of code can be changed, but would also need to be changed further down
+   in the sketch so make sure you understand where they are used before changing.
+*/
+
+#define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature  reading MQTT Topic.
 #define MQTT_PUB_HEAT "Esp_Heater_Status"     // Temperature heater status MQTT Topic
+
+// This next line of code needs to stay the same so do not change pin allocation.
+
 const int oneWireBus = 4;                     // GPIO pin that the DS18B20 is connected to
+
+// The next 4 variables are used for the timing you can change the 3rd and 4th ones only
 unsigned long previousMillis = 0;             // Stores last time temperature was published
 unsigned long thenMillis = 0;                 // Used in the time to publish
 const long interval = 60000;                  // Interval at which to publish sensor readings ever 60 seconds
 const long interval1 = 65000;                 // Interval to publish if heater is on or off
+
+// This one is important as it allows us to use floating point numbers
 float temp;                                   // Temperature value
 
 //End of Variables
 
-OneWire oneWire(oneWireBus);                  // Setup a oneWire instance to communicate with any OneWire devices
+// Setup a oneWire instance to communicate with any OneWire devices
+OneWire oneWire(oneWireBus);                  
 
-DallasTemperature sensors(&oneWire);          // Pass our oneWire reference to Dallas Temperature sensor 
+// Pass our oneWire reference to Dallas Temperature sensor 
+DallasTemperature sensors(&oneWire);          
 
+// Use AsycnMqttClient to hand the timers to make sure we do not try connecting to mqtt while connecting to wifi
 AsyncMqttClient mqttClient;
 TimerHandle_t mqttReconnectTimer;
 TimerHandle_t wifiReconnectTimer;
 
+// Used to connect to the wifi when required
 void connectToWifi() {
   WiFi.begin(ssid, password);
 }
 
+// Used to connect to mqtt when wehave a wifi connection
 void connectToMqtt() {
   mqttClient.connect();
 }
 
+/* Case 1 is we have a wifi connection so connect to mqtt
+   Case 2 is used when we do not have a wifi connection
+*/ 
 void WiFiEvent(WiFiEvent_t event) {
   switch(event) {
     case SYSTEM_EVENT_STA_GOT_IP:
       connectToMqtt();
       break;
     case SYSTEM_EVENT_STA_DISCONNECTED:
-      xTimerStop(mqttReconnectTimer, 0);   // ensure we don't reconnect to MQTT while reconnecting to Wi-Fi
+      xTimerStop(mqttReconnectTimer, 0);   
       xTimerStart(wifiReconnectTimer, 0);
       break;
   }
