@@ -48,7 +48,7 @@ const char password[] = WIFI_PASSWORD;
 */
 
 #define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature  reading MQTT Topic.
-#define MQTT_PUB_HEAT "Esp_Heater_Status"     // Temperature heater status MQTT Topic
+#define MQTT_PUB_HEAT "Esp_Heater_Status"    // Temperature heater status MQTT Topic
 
 // This next line of code needs to stay the same so do not change pin allocation.
 
