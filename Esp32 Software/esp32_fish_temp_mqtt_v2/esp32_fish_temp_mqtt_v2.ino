@@ -39,7 +39,7 @@ extern "C" {
 //These are the variables that need to be setup by the user
 const char ssid[] = WIFI_SSID;
 const char password[] = WIFI_PASSWORD;
-#define MQTT_HOST IPAddress(192, 168, 0, 18)  // Change for your Pi Ip address
+#define MQTT_HOST IPAddress(192, 168, 0, 30)  // Change for your Pi Ip address
 #define MQTT_PORT 1883                        // Pi port used
 #define MQTT_PUB_TEMP "Esp_Heater_Control"    // Temperature  reading MQTT Topic
 #define MQTT_PUB_HEAT "Esp_Heater_Status"     // Temperature heater status MQTT Topic
@@ -117,8 +117,9 @@ void loop() {
     previousMillis = currentMillis;
     sensors.requestTemperatures(); 
     temp = sensors.getTempCByIndex(0);
-
-    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(temp).c_str());                            
+    Serial.print(temp);
+    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(temp).c_str()); 
+                           
   }
   if (temp <=25.1) {
     digitalWrite(2, HIGH);
