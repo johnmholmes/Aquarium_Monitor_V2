@@ -2,7 +2,45 @@
 
 In this project, I will document my progress in designing and implementing the next generation of my marine tank monitor using the Raspberry Pi 4 with 4GB of RAM. This documentation will serve as a future reference, allowing me to easily revisit and make any necessary changes to the system. Moreover, I am sharing this journey with others, enabling them to embark on similar endeavors.
 
+Please beaware I may well change my approach to this project but will leave the files here for future reference.
+
+ -----
+
+ # Latest News Will Appear Here
+
+I have reached a decision to alter my approach for version 2 of the controller. Recent days of research have drawn my attention to the DS18B20 sensors and the potential issues they can introduce when connected to the Raspberry Pi. While I personally haven't encountered these issues, I believe it's prudent to consider them in my design and strategy.
+
+Despite the change in direction, I intend to keep the files and videos accessible, as they could prove valuable for future reference by others.
+
+My new focus will center on utilizing the Raspberry Pi as a standalone server. Individual modules will transmit data via MQTT to the Raspberry Pi, which will then distribute messages to other units subscribed to the pertinent topics.
+
+This approach also opens up additional possibilities for IoT applications, such as home security, among others.
+
  ------
+
+ # WhyI Am Making V2
+
+The earlier version of the monitor had all components hardwired into the Raspberry Pi 4, posing challenges for maintenance and implementing design enhancements. Regrettably, during my vacation, a lightning strike occurred, rendering the Raspberry Pi inoperable. Simultaneously, the old PC power supply I was utilizing also malfunctioned, resulting in a loss of external connectivity. Consequently, I made the decision to develop a new and improved iteration (V2) that would possess enhanced durability and ease of maintenance, thereby ensuring the continuous functionality of the monitor in the future.
+
+ ------
+
+ # Controller Requirements
+
+The primary objective of this project is to establish worldwide accessibility for monitoring selected items.
+
+The system's design will encompass the monitoring of temperatures in the display tank, sump tank, and room. This data will be presented through a Node Red GUI.
+
+To achieve heightened monitoring and safety protocols, an additional microcontroller (ESP32) will be employed. This microcontroller will oversee the display tank and activate an emergency heater set to a lower temperature (e.g., 23.5 degrees Celsius) than the standard tank temperature of 25.5 degrees Celsius.
+
+Furthermore, the project will feature an auto top-off (ATO) system for the sump. This system will integrate optical infrared sensors and a Tunzi pump situated within a 25-liter barrel adjacent to the sump. An ESP32 will oversee both the sump and ATO barrel, relaying the collected data to the Raspberry Pi via MQTT, which will then be displayed on a Node Red Dashboard. The pump will be programmed to operate for a specific duration, necessitating only one sensor in the sump.
+
+Additionally, the system will incorporate water level monitoring for the display tank to prevent overflow incidents. This functionality will empower the system to temporarily halt one of the return pumps, ensuring the water level remains within safe parameters. Control of this function will be assigned to an ESP32, equipped with a single optical infrared sensor.
+
+Lastly, the project will involve the monitoring of the skimmer overflow container, automatically ceasing the supply to the skimmer when required.
+
+Subsequent components will be incorporated as the project progresses.
+
+-----
 
 # Languages Used 
 
@@ -25,42 +63,11 @@ In this project, I will document my progress in designing and implementing the n
 
  ------
  
-# WhyI Am Making V2
-
-The earlier version of the monitor had all components hardwired into the Raspberry Pi 4, posing challenges for maintenance and implementing design enhancements. Regrettably, during my vacation, a lightning strike occurred, rendering the Raspberry Pi inoperable. Simultaneously, the old PC power supply I was utilizing also malfunctioned, resulting in a loss of external connectivity. Consequently, I made the decision to develop a new and improved iteration (V2) that would possess enhanced durability and ease of maintenance, thereby ensuring the continuous functionality of the monitor in the future.
-
-The new controller will feature only a select number of components hardwired to it. Precisely, it will integrate 3 DS18B20 waterproof temperature sensors that employ the 1-wire protocol on the Raspberry Pi 4. A breakout board will link the bus wire to Pin 4 on the Pi. Power at 3.3 volts will be drawn from Pin 1, while grounding will be established through Pin 6.
-
-Furthermore, I intend to integrate an LED on Pin 40, with its ground connection established on Pin 34. To safeguard the LED from the 3.3-volt supply originating from the Pi, I will employ a 220-ohm resistor for protection.
-
-Although this may change during the development of the project.
-
- ------
-
-# Controller Requirements
-
-The primary objective of this project is to establish worldwide accessibility for monitoring selected items.
-
-The system's design will encompass the monitoring of temperatures in the display tank, sump tank, and room. This data will be presented through a Node Red GUI.
-
-To achieve heightened monitoring and safety protocols, an additional microcontroller (ESP32) will be employed. This microcontroller will oversee the display tank and activate an emergency heater set to a lower temperature (e.g., 23.5 degrees Celsius) than the standard tank temperature of 25.5 degrees Celsius.
-
-Furthermore, the project will feature an auto top-off (ATO) system for the sump. This system will integrate optical infrared sensors and a Tunzi pump situated within a 25-liter barrel adjacent to the sump. An ESP32 will oversee both the sump and ATO barrel, relaying the collected data to the Raspberry Pi via MQTT, which will then be displayed on a Node Red Dashboard. The pump will be programmed to operate for a specific duration, necessitating only one sensor in the sump.
-
-Additionally, the system will incorporate water level monitoring for the display tank to prevent overflow incidents. This functionality will empower the system to temporarily halt one of the return pumps, ensuring the water level remains within safe parameters. Control of this function will be assigned to an ESP32, equipped with a single optical infrared sensor.
-
-Lastly, the project will involve the monitoring of the skimmer overflow container, automatically ceasing the supply to the skimmer when required.
-
-Subsequent components will be incorporated as the project progresses.
-
------
-
 # Work Completed
 
-Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world.
-
-
-
+   1. Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world. See the folder VNC for details.
+   2. Install Node Red to create a Graphical User Interface. See Node Red folder for details.
+   3. Install Sqlite3 for database uses. See Sqlite folder for details.
 
 ----
 
