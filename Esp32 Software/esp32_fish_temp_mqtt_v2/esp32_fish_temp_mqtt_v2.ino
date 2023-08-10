@@ -113,6 +113,8 @@ void onMqttDisconnect(AsyncMqttClientDisconnectReason reason) {
 void onMqttPublish(uint16_t packetId) {
 }
 
+
+// start the void setup
 void setup() {
   
   sensors.begin();              // Start the DS18B20 sensor
@@ -120,6 +122,8 @@ void setup() {
   pinMode(23, OUTPUT);          // setup a solid state realy to control 240 volts AC
   Serial.begin(115200);         // Used for debug only print statements removed already
 
+  
+  // pulls all the timer details into once item
   mqttReconnectTimer = xTimerCreate("mqttTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToMqtt));
   wifiReconnectTimer = xTimerCreate("wifiTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToWifi));
 
@@ -129,32 +133,49 @@ void setup() {
   mqttClient.onDisconnect(onMqttDisconnect);
   mqttClient.onPublish(onMqttPublish);
   mqttClient.setServer(MQTT_HOST, MQTT_PORT);
+  
+  // Starts the wifi connection
   connectToWifi();
 }
 
+// End void setup
+
+// Start the void loop
+
 void loop() {
+
+  // Setup the current time for millis
   unsigned long currentMillis = millis();
+
+  // Check to see if its time to read the sensor & if so send a mqtt message to the Raspberry Pi 4
   if (currentMillis - previousMillis >= interval) {
     previousMillis = currentMillis;
     sensors.requestTemperatures(); 
     temp = sensors.getTempCByIndex(0);
-    Serial.print(temp);
+    Serial.print(temp);  // Used if the esp32 is connected to a usb lead the Arduino Ide serial monitor
     uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(temp).c_str()); 
                            
   }
-  if (temp <=25.1) {
-    digitalWrite(2, HIGH);
-    digitalWrite(23, LOW);
+
+  // This check the value of the temp and if equal to or below a set value turn on relay
+  if (temp <=23.9) {
+    digitalWrite(2, HIGH);     //Led on
+    digitalWrite(23, HIGH);    //Heater relay on
+    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Esp Heater On"); 
   }
-  if (temp >= 25.5) {
-    digitalWrite(2, LOW);
-    digitalWrite(23, HIGH);
+
+  // This check the value of the temp and if equal to or above a set value turn off relay
+  if (temp >= 25.0) {
+    digitalWrite(2, LOW);     //Led Off
+    digitalWrite(23, LOW);    //Heater relay off
   }
+
+  // used to send a status update to the raspberry pi if the heater is on or off
   unsigned long nowMillis = millis();
   if (nowMillis - thenMillis >= interval1) {
         thenMillis = nowMillis;
-        if(temp < 25.4){
-        uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Esp Heater On");   
+        if(temp <= 25.0){
+        // do nothing  
         }
         else{
         uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Esp Heater Off");  
