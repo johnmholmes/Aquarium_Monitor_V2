@@ -14,5 +14,7 @@ You then need to copy and paste the following to start Node Red on Boot Up of th
 
 sudo systemctl enable nodered.service
 
+Moder details can be seen in this video I made https://youtu.be/31TqqJM__X4
+
 -----
 
