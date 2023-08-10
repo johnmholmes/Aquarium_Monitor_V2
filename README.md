@@ -43,12 +43,6 @@ This approach also opens up additional possibilities for IoT applications, such 
 
 The earlier version of the monitor had all components hardwired into the Raspberry Pi 4, posing challenges for maintenance and implementing design enhancements. Regrettably, during my vacation, a lightning strike occurred, rendering the Raspberry Pi inoperable. Simultaneously, the old PC power supply I was utilizing also malfunctioned, resulting in a loss of external connectivity. Consequently, I made the decision to develop a new and improved iteration (V2) that would possess enhanced durability and ease of maintenance, thereby ensuring the continuous functionality of the monitor in the future.
 
-The new controller will feature only a select number of components hardwired to it. Precisely, it will integrate 3 DS18B20 waterproof temperature sensors that employ the 1-wire protocol on the Raspberry Pi 4. A breakout board will link the bus wire to Pin 4 on the Pi. Power at 3.3 volts will be drawn from Pin 1, while grounding will be established through Pin 6.
-
-Furthermore, I intend to integrate an LED on Pin 40, with its ground connection established on Pin 34. To safeguard the LED from the 3.3-volt supply originating from the Pi, I will employ a 220-ohm resistor for protection.
-
-Although this may change during the development of the project.
-
  ------
 
 # Controller Requirements
