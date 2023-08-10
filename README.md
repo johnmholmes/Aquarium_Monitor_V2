@@ -65,7 +65,7 @@ Subsequent components will be incorporated as the project progresses.
  
 # Work Completed
 
-Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world.
+      1. Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world.
 
 ----
 
