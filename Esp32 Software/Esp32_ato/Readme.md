@@ -1,10 +1,15 @@
-# ESP32 Sketches
+# ESP32 Auto Top Off
 
-This folder will hold various skecthes I create for the Esp32 modules. 
+The sketch is taking good shape and it will have 2 sensors monitoring the sump return chamber and one monitoring the Ato container. The pump will be a Tunzi ATO pump and will be supplied via 12 volts. To be able to turn on the pump I will be using an Mosfet module rather than a relay as these are soldi state so no moving parts to fail. The Esp will communicate to the Raspbeery pi via Mqtt. There will be a number of messages being sent.
 
-These nodes are going through an number of changes so be prepared for new features being added to them.
+1. ATO_Heart_Beat
+2. ATO_Sump_Check
+3. ATO_Container_Check
+4. ATO_Refill
 
-The esp32_fish_temp_mqtt_v2 is a single DS18B20 sensor on the 1 wire bus, and will drive a solid state relay to control a single back up heater in the main display tank.
+These will be sending either true or false as a msg.payload
+
+These messages then will be worked with in Node read to show a graphical indication of what is happening.
 
 
 
