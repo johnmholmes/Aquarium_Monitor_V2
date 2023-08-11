@@ -1,5 +1,9 @@
 #  Heater Control Blog
 
+# 10 August
+
+The backup heater Esp32 module has now be setup and is going through testing stages the code is the same as the previous one , but with adjustments to the control temperatures be lower.
+
 
 # 9 August
 
