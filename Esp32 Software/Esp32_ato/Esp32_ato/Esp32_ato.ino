@@ -54,8 +54,9 @@ These variables are used for the various timers
 
 int pumpRun = 10000;                                //10 Second ato pump run this will need adjusting once final testing done
 int interval = 60000;                               //1 minute timer for the hear beat led message and flash
-int longinterval = 60000;                           //1 hour timer for auto top off check 3600000
-long unsigned int RebootTimer = 86400000;           //24 hours between reboots
+long unsigned int midinterval =300000;              //5 minute checks 300,000
+long unsigned int longinterval = 3600000;           //1 hour timer for auto top off check 3,600,000
+long unsigned int RebootTimer = 86400000;           //24 hours between reboots 86,400,000
 long unsigned int heartBeatTimer = 0;
 long unsigned int sumpCheckTimer = 0;
 long unsigned int containerCheckTimer = 0;
