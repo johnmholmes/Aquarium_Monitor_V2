@@ -145,7 +145,7 @@ void SumpCheck(){
   SumplowState = digitalRead(SumpLow);
   if (millis() > sumpCheckTimer){
     delay(400);
-    sumpCheckTimer = longinterval + millis();
+    sumpCheckTimer = midinterval + millis();
     if(SumplowState == LOW){
       uint16_t packetIdPub0 = mqttClient.publish(MQTT_PUB_LEVEL_CHECK, 1, true, "false");
     }
@@ -162,7 +162,7 @@ void ContainerCheck(){
   AtoContainerLowState = digitalRead(AtoContainerLow);
   if (millis() > containerCheckTimer) {
     delay(500);
-    containerCheckTimer = longinterval + millis();
+    containerCheckTimer = midinterval + millis();
     if (AtoContainerLowState == LOW){
         uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_Container, 1, true, "false");
         }
