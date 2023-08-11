@@ -1,6 +1,10 @@
 # ESP32 Auto Top Off
 
-The sketch is taking good shape and it will have 2 sensors monitoring the sump return chamber and one monitoring the Ato container. The pump will be a Tunzi ATO pump and will be supplied via 12 volts. To be able to turn on the pump I will be using an Mosfet module rather than a relay as these are soldi state so no moving parts to fail. The Esp will communicate to the Raspbeery pi via Mqtt. There will be a number of messages being sent.
+The sketch is taking on a good shape, and it will incorporate one sensor to monitor the sump return chamber, along with one sensor to monitor the ATO container. The pump in use will be a Tunzi ATO pump, powered by 12 volts. To activate the pump, I will utilize a Mosfet module instead of a relay, as Mosfets are solid-state components, eliminating the possibility of mechanical failure.
+
+Adjusting the pump's runtime will involve manipulating the 'pumpRun' variable, and I have determined that a 10-second duration suits my specific use case. Moreover, I will implement a fail-safe mechanism to cut the power supply to the pump if the sump's liquid level becomes excessively high, which could be attributed to an Esp32 malfunction. This will be a simple float switch.
+
+Facilitating communication between the Esp and the Raspberry Pi will involve employing MQTT. This will allow the exchange of multiple messages between the two devices, enhancing their interaction and functionality.
 
 1. ATO_Heart_Beat
 2. ATO_Sump_Check
@@ -10,6 +14,8 @@ The sketch is taking good shape and it will have 2 sensors monitoring the sump r
 These will be sending either true or false as a msg.payload
 
 These messages then will be worked with in Node read to show a graphical indication of what is happening.
+
+
 
 
 
