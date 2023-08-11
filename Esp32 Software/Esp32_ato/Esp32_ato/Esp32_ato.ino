@@ -54,9 +54,9 @@ These variables are used for the various timers
 
 const unsigned long pumpRun = 10000;                                //10 Second ato pump run this will need adjusting once final testing done
 const unsigned long interval = 60000;                               //1 minute timer for the hear beat led message and flash
-const unsigned long midinterval =300000;              //5 minute checks 300,000
-const unsigned long longinterval = 3600000;           //1 hour timer for auto top off check 3,600,000
-const unsigned long RebootTimer = 86400000;           //24 hours between reboots 86,400,000
+const unsigned long midInterval =300000;              //5 minute checks 300,000
+const unsigned long longInterval = 3600000;           //1 hour timer for auto top off check 3,600,000
+const unsigned long rebootTimer = 86400000;           //24 hours between reboots 86,400,000
 unsigned long heartBeatTimer = 0;
 unsigned long sumpCheckTimer = 0;
 unsigned long containerCheckTimer = 0;
@@ -128,7 +128,7 @@ Functions to be called from the void loop()
 */
 
 // Sart of heart beat check -------------------------------------------------------------
-void HeartBeat(){
+void heartBeat(){
   if (millis() > heartBeatTimer){
     uint16_t packetIdPub0 = mqttClient.publish(MQTT_PUB_HEART_BEAT, 1, true, "true");
     digitalWrite(HeartBeatLed, HIGH);
@@ -141,11 +141,11 @@ void HeartBeat(){
 // End of heart beat --------------------------------------------------------------------
 
 // Sump Level Check ---------------------------------------------------------------------
-void SumpCheck(){
+void sumpCheck(){
   SumplowState = digitalRead(SumpLow);
   if (millis() > sumpCheckTimer){
     delay(400);
-    sumpCheckTimer = midinterval + millis();
+    sumpCheckTimer = midInterval + millis();
     if(SumplowState == LOW){
       uint16_t packetIdPub0 = mqttClient.publish(MQTT_PUB_LEVEL_CHECK, 1, true, "false");
     }
@@ -158,11 +158,11 @@ void SumpCheck(){
 // End of sump check----------------------------------------------------------------------
 
 // Start of container check --------------------------------------------------------------
-void ContainerCheck(){
+void containerCheck(){
   AtoContainerLowState = digitalRead(AtoContainerLow);
   if (millis() > containerCheckTimer) {
     delay(500);
-    containerCheckTimer = midinterval + millis();
+    containerCheckTimer = midInterval + millis();
     if (AtoContainerLowState == LOW){
         uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_Container, 1, true, "false");
         }
@@ -174,11 +174,11 @@ void ContainerCheck(){
 // End of container check -----------------------------------------------------------------
 
 // Start of sump refill -------------------------------------------------------------------
-void Refill(){
+void refill(){
   SumplowState = digitalRead(SumpLow);
   AtoContainerLowState = digitalRead(AtoContainerLow);
   if (millis() > refillTimer) {
-    refillTimer = longinterval + millis();
+    refillTimer = longInterval + millis();
       digitalWrite(HeartBeatLed, HIGH);
       delay(500);
       digitalWrite(HeartBeatLed, LOW);
@@ -196,8 +196,8 @@ void Refill(){
 // End of sump refill ----------------------------------------------------------------------
 
 // Start of reboot -------------------------------------------------------------------------
-void RebootEsp(){
-  if (millis() > RebootTimer){
+void rebootEsp(){
+  if (millis() > rebootTimer){
     delay(10000);   //delay 10 seconds to allow messsage to be sent before rebbot.
     ESP.restart();
    }
@@ -208,9 +208,9 @@ void RebootEsp(){
 // Start of void loop calling the different functions --------------------------------------
 void loop(){
 
-   HeartBeat();
-   ContainerCheck();
-   SumpCheck();
-   Refill();
-   RebootEsp();
+   heartBeat();
+   containerCheck();
+   sumpCheck();
+   refill();
+   rebootEsp();
 }
