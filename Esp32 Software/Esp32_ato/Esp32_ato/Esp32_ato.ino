@@ -52,15 +52,15 @@ int AtoContainerLowState = 0;
 These variables are used for the various timers
 */
 
-int pumpRun = 10000;                                //10 Second ato pump run this will need adjusting once final testing done
-int interval = 60000;                               //1 minute timer for the hear beat led message and flash
-long unsigned int midinterval =300000;              //5 minute checks 300,000
-long unsigned int longinterval = 3600000;           //1 hour timer for auto top off check 3,600,000
-long unsigned int RebootTimer = 86400000;           //24 hours between reboots 86,400,000
-long unsigned int heartBeatTimer = 0;
-long unsigned int sumpCheckTimer = 0;
-long unsigned int containerCheckTimer = 0;
-long unsigned int refillTimer = 0;
+const unsigned long pumpRun = 10000;                                //10 Second ato pump run this will need adjusting once final testing done
+const unsigned long interval = 60000;                               //1 minute timer for the hear beat led message and flash
+const unsigned long midinterval =300000;              //5 minute checks 300,000
+const unsigned long longinterval = 3600000;           //1 hour timer for auto top off check 3,600,000
+const unsigned long RebootTimer = 86400000;           //24 hours between reboots 86,400,000
+unsigned long heartBeatTimer = 0;
+unsigned long sumpCheckTimer = 0;
+unsigned long containerCheckTimer = 0;
+unsigned long refillTimer = 0;
 
 /*
 Setup for WiFi and Mqtt so do not alter any of these setting
