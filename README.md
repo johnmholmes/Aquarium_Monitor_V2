@@ -79,8 +79,15 @@ Temperature monitoring involves the Display tank, Sump tank, and Living Room, al
 
 Another facet of the project pertains to temperature monitoring solely in the Display tank, wherein an ESP32 is employed. This ESP32 also encompasses contingency control over a single heater within the tank, configured to activate if the Display temperature falls below 23.5 degrees Celsius. This secondary heater is equipped with a thermostat set at 25 degrees Celsius. This component is still a work in progress and under development.
 
+The module is under going various test to ensure smoth operation for the backup controller. Once that is complete I will produce the main 3 sensor module which the sketch is being worked on now.
+
 ----
 
+# Auto Top Off
+
+This has now beeen started and the sketch has been written for the Esp32 and is under going various test to ensure it is performing how I want it too. The case for the Esp32 is currently being 3D printed and should be completed over the weekend.
+
+----
 # To Be Started
 
 Auto top of via a ESP32 this will monitor the sump level and report to the Pi as well as running the Ato pump, this will have a fail safe built in via a float switch incase the ESP32 fails.
