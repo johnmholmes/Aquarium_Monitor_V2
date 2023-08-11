@@ -90,8 +90,6 @@ This has now beeen started and the sketch has been written for the Esp32 and is 
 ----
 # To Be Started
 
-Auto top of via a ESP32 this will monitor the sump level and report to the Pi as well as running the Ato pump, this will have a fail safe built in via a float switch incase the ESP32 fails.
-
 Display tank water level monitor to prevent over fill may osibly control on of the return pumps.
 
 Leak detection.
