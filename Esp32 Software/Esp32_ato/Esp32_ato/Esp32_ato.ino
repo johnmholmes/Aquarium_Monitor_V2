@@ -53,7 +53,7 @@ These variables are used for the various timers
 */
 
 const unsigned long pumpRun = 10000;                                //10 Second ato pump run this will need adjusting once final testing done
-const unsigned long interval = 60000;                               //1 minute timer for the hear beat led message and flash
+const unsigned long interval = 10000;                               //10 second timer for the hear beat led message and flash
 const unsigned long midInterval =300000;              //5 minute checks 300,000
 const unsigned long longInterval = 3600000;           //1 hour timer for auto top off check 3,600,000
 const unsigned long rebootTimer = 86400000;           //24 hours between reboots 86,400,000
@@ -132,7 +132,7 @@ void heartBeat(){
   if (millis() > heartBeatTimer){
     uint16_t packetIdPub0 = mqttClient.publish(MQTT_PUB_HEART_BEAT, 1, true, "true");
     digitalWrite(HeartBeatLed, HIGH);
-    delay(1000);
+    delay(300);
     digitalWrite(HeartBeatLed, LOW);
     heartBeatTimer = interval + millis();
     uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEART_BEAT, 1, true, "false");
