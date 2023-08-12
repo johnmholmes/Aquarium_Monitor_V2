@@ -85,16 +85,20 @@ The module is under going various test to ensure smoth operation for the backup 
 
 # Auto Top Off
 
-This has now beeen started and the sketch has been written for the Esp32 and is under going various test to ensure it is performing how I want it too. The case for the Esp32 is currently being 3D printed and should be completed over the weekend.
+This has now beeen started and the sketch has been written for the Esp32 and is under going various test to ensure it is performing how I want it too. The case for the Esp32 is currently being 3D printed and should be completed over the weekend. I am just adding the last bit to the sketch to allow for remote turning off of the refil only.
 
 ----
 # To Be Started
 
-Display tank water level monitor to prevent over fill may osibly control on of the return pumps.
+Display tank water level monitor to prevent over fill it will control one of the return pumps module.
 
-Leak detection.
+Leak detection module.
+
+Skimmer over flow container cut off module.
 
 Visual display via LEDs above the tank.
+
+Ph monitor module.
 
 ----
 
