@@ -25,9 +25,11 @@ Initial work bench testing is proving very positive and can be seen working in v
 
 # Project development
 
-My goal is to be able to interact with the ATO Esp32 module, and if needed be able to over ride the system if required from outside of my home network. The reason for this may be if while I am away from the home for an extended period the infra read sensors can get dirty from algea growth and not trigger the pump to run. In this case sernario I could then triggered this event from Node Red to run the pump. I do use a Esp32can to monitor the sump area of the system.
+My goal is to be able to interact with the ATO Esp32 module, and if needed be I will be able to over ride the system if required from outside of my home network. The reason for this may be if while I am away from the home for an extended period the infra read sensors can get dirty from algea growth and not trigger the pump to run. In this case sernario I could then triggered this event from Node Red to run the pump. I do use a Esp32can to monitor the sump area of the system.
 
-The Esp32 unit I am using is approxamitly £6 at the moment in the UK and the number of free GPIO pins makes this simple to accomplish, by adding some extra functions to the sketch and Node Red.
+The Esp32 unit I am using is approxamitly £6 at the moment in the UK and the number of free GPIO pins makes this simple to accomplish, by adding some extra functions to the sketch and Node Red. I am also using a £4 break out board to make connecting devices more easily. The total cost for this unit will be around £15 less the pump and power supply.
+
+While commercial units are available I feel the amount of control I can have out ways these systems. Also if you buy direct from China vai aliexpress the cost is brought down to aapprox £10.
 
 
 
