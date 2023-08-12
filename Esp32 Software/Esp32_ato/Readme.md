@@ -1,4 +1,4 @@
-# ESP32 Auto Top Off
+# ESP32 Auto Top Off Module
 
 The sketch is starting to be developed in a series of small steps. The plan is, it will incorporate one sensor to monitor the sump return chamber, along with one sensor to monitor the ATO container. The pump I use is a Tunzi ATO pump as this fits through  the container opening. This is powered by 12 volts power supply, which will also power the Esp32, I will be utilizing a Mosfet module instead of a relay, as Mosfets are solid-state components, eliminating the possibility of mechanical failure.
 
