@@ -1,9 +1,6 @@
 /*The sketch is being developed to replace some of the sensors being controlled by the Raspbeery Pi 4 and will use MQTT to transfer
  *the sensor status to the Pi 4 
  *
- *MQTT and WiFi work is complete
- *Heart beat notification complete
- *
  *The EN, VN, VP pins must not be used in this configuation
  *
  */
@@ -52,8 +49,8 @@ int AtoContainerLowState = 0;
 These variables are used for the various timers
 */
 
-const unsigned long pumpRun = 10000;                                //10 Second ato pump run this will need adjusting once final testing done
-const unsigned long interval = 10000;                               //10 second timer for the hear beat led message and flash
+const unsigned long pumpRun = 10000;                  //10 Second ato pump run this will need adjusting once final testing done
+const unsigned long interval = 10000;                 //10 second timer for the hear beat led message and flash
 const unsigned long midInterval =300000;              //5 minute checks 300,000
 const unsigned long longInterval = 3600000;           //1 hour timer for auto top off check 3,600,000
 const unsigned long rebootTimer = 86400000;           //24 hours between reboots 86,400,000
@@ -66,13 +63,13 @@ unsigned long refillTimer = 0;
 Setup for WiFi and Mqtt so do not alter any of these setting
 */
 
-AsyncMqttClient mqttClient;                         // Used to control the MQTT message transmition for the library to work
-TimerHandle_t mqttReconnectTimer;                   // Do not mess with these
+AsyncMqttClient mqttClient;                          // Used to control the MQTT message transmition for the library to work
+TimerHandle_t mqttReconnectTimer;                    // Do not mess with these
 TimerHandle_t wifiReconnectTimer;
 
 void connectToWifi() {
   WiFi.begin(ssid, password);
-}                                                   // Starts the Wifi connection and supplys the login and password
+}                                                    // Starts the Wifi connection and supplys the login and password
  
 void connectToMqtt() {
   mqttClient.connect();
