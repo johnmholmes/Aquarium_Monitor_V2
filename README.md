@@ -10,7 +10,7 @@ Please beaware I may well change my approach to this project but will leave the 
 
 I have reached a decision to alter my approach for version 2 of the controller. Recent days of research have drawn my attention to the DS18B20 sensors and the potential issues they can introduce when connected to the Raspberry Pi. While I personally haven't encountered these issues, I believe it's prudent to consider them in my design and strategy.
 
-Despite the change in direction, I intend to keep the files and videos accessible, as they could prove valuable for future reference by others.
+Despite the change in direction, I intend to keep the files and videos accessible, as they could prove valuable for future reference by myself and by others concidering doing something along these lines.
 
 My new focus will center on utilizing the Raspberry Pi as a standalone server. Individual modules will transmit data via MQTT to the Raspberry Pi, which will then distribute messages to other units subscribed to the pertinent topics.
 
