@@ -32,7 +32,7 @@ extern "C" {
 const int oneWireBus = 4;                     // GPIO where the DS18B20 is connected to
 unsigned long previousMillis = 0;             // Stores last time temperature was published
 unsigned long thenMillis = 0;
-const long interval = 10000;                  // Interval at which to publish sensor readings ever 30 seconds
+const long interval = 10000;                  // Interval at which to publish sensor readings ever 5 minutes
 const long interval1 = 15000;                 // Interval to publish if heater is on or off
 float temp;                                   // Temperature value
 
@@ -85,6 +85,8 @@ void setup() {
   pinMode(23, OUTPUT);          // setup an output on pin 23
   Serial.begin(115200);
 
+  
+
   mqttReconnectTimer = xTimerCreate("mqttTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToMqtt));
   wifiReconnectTimer = xTimerCreate("wifiTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToWifi));
 
@@ -104,27 +106,29 @@ void loop() {
     sensors.requestTemperatures(); 
     temp = sensors.getTempCByIndex(0);
 
-    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(temp).c_str());                            
+    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(temp).c_str());
+
   }
-  if (temp <=23.9) {
+  if (temp <= 23.9) {
     digitalWrite(2, HIGH);
     digitalWrite(23, LOW);
+    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Heater On");
     
   }
-  if (temp >= 24.5) {
+  if (temp >= 24.4) {
     digitalWrite(2, LOW);
     digitalWrite(23, HIGH);
-    
+    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Heater Off"); 
   }
-  unsigned long nowMillis = millis();
-  if (nowMillis - thenMillis >= interval1) {
-        thenMillis = nowMillis;
-        if(temp < 24.5){
-        uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Heater On");   
-        }
-        else{
-        uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Heater Off");  
-        }
-  }
+  // unsigned long nowMillis = millis();
+  // if (nowMillis - thenMillis >= interval1) {
+  //       thenMillis = nowMillis;
+  //       if(temp < 24.5){
+  //       //uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Heater On");   
+  //       }
+  //       else{
+  //       //uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Heater Off");  
+  //       }
+  //}
   
 }
