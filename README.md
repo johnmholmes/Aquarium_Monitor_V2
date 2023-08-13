@@ -68,6 +68,7 @@ Subsequent components will be incorporated as the project progresses.
    1. Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world. See the folder VNC for details.
    2. Install Node Red to create a Graphical User Interface. See Node Red folder for details.
    3. Install Sqlite3 for database uses. See Sqlite folder for details.
+   4. BackUp heater control now complete and going through a week long testing running the tank at a slightly cooler temperature than normal between 23.9 and 24.4 Deg C.
 
 ----
 
@@ -94,7 +95,7 @@ This has now beeen started and the sketch has been written for the Esp32 and is 
 2. Leak detection module.
 3. Skimmer over flow container cut off module.
 4. Visual display via LEDs above the tank.
-5. Ph monitor module.
+5. Ph monitor module. This I have tried before, but may revisit this project again as it could be handy if it gives consistant results.
 6. 24 volt distrobution module. (Currently I have 4 devices that run on 24 volt, each has its own power tranformer. This module would use one wall brick transformer with an out put of 5 Amps which would use an Esp32 to turn on and off pumps and wave makers as required.)
    
 ----
