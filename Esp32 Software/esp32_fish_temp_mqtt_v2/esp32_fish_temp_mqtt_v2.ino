@@ -160,14 +160,14 @@ void loop() {
   // This check the value of the temp and if equal to or below a set value turn on relay
   if (temp <=23.9) {
     digitalWrite(2, HIGH);     //Led on
-    digitalWrite(23, HIGH);    //Heater relay on
+    digitalWrite(23, LOW);    //Heater relay on
     uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_HEAT, 1, true, "Esp Heater On"); 
   }
 
   // This check the value of the temp and if equal to or above a set value turn off relay
-  if (temp >= 25.0) {
+  if (temp >= 24.8) {
     digitalWrite(2, LOW);     //Led Off
-    digitalWrite(23, LOW);    //Heater relay off
+    digitalWrite(23, HIGH);    //Heater relay off
   }
 
   // used to send a status update to the raspberry pi if the heater is on or off
