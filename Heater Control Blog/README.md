@@ -6,9 +6,11 @@ The Tests are quite interesting and here is a graph showing theheat on / Off cyc
 
 ![graph_1](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/6a9dfdda-cb7f-46dd-bec0-2806fcca7a6e)
 
-I have also replaced the sketch and splite off the void loop into seperate function calls which helps make the code easier to understand and maintain. You can now set the min max vale at the start of the skecth.
+I have also replaced the sketch and splite off the void loop into seperate function calls which helps make the code easier to understand and maintain. You can now set the min max vale at the start of the skecth. And it now reads the state of the GPIO pin 23 for sending the MQTT heater status. This fixed an issue with the way I had written the previous versions.
 
+I have now added a folder to the Esp32 Software section that has the previous codes and a brief overview of the changes.
 
+----
 
 # 10 August
 
