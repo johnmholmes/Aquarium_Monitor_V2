@@ -6,12 +6,19 @@ These nodes are going through an number of changes so be prepared for new featur
 
 The esp32_fish_temp_mqtt_v1 is a single DS18B20 sensor on the 1 wire bus, and will drive a solid state relay to control a single back up heater in the main display tank.
 
+--------------
+
+# Version 1 BackUp controller
+
 Version 1 did not get uploaded so we start with: 
 
 1. Version 1a just had my wifi details added to a Secret.h file.
 2. Version 1b This version I Added different functions to call from the main loop().
 3. Version 1c This version seperated out items that had been done in the main loop().
 4. Version 1d This version now uses the current state of pin 23 to send the heater status to MQTT.
+
+--------------
+# Version 2 Main control and monitor module
 
 
 
