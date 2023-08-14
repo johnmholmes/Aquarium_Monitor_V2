@@ -10,6 +10,8 @@ I have also replaced the sketch and splite off the void loop into seperate funct
 
 I have now added a folder to the Esp32 Software section that has the previous codes and a brief overview of the changes.
 
+The final version of the backup is nearly complete and this has a reboot timer being added. This will all e shown in the next video release planed for Wednesday 16 August
+
 ----
 
 # 10 August
