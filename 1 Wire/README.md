@@ -12,3 +12,4 @@ For the ESP32 side of thing See https://github.com/PaulStoffregen/OneWire for mo
 
 After some trials I have desidered to not go down this path this is explained in video number 16 after advise from other members on the Node Red forum.
 
+https://discourse.nodered.org/t/ds18b20-80deg-readings-can-it-be-filter-out-in-node-red/80429
