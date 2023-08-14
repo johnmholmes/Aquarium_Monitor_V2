@@ -1,4 +1,12 @@
-#  Heater Control Blog
+# Heater Control Blog
+
+# 14 August
+
+The Tests are quite interesting and here is a graph showing theheat on / Off cycle, this shows the 200 watt heater is taking 1 hour to heat the tank.
+
+![graph_1](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/6a9dfdda-cb7f-46dd-bec0-2806fcca7a6e)
+
+
 
 # 10 August
 
