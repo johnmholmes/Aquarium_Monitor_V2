@@ -4,7 +4,9 @@
 
 The Tests are quite interesting and here is a graph showing theheat on / Off cycle, this shows the 200 watt heater is taking 1 hour to heat the tank.
 
-![graph_1](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/6a9dfdda-cb7f-46dd-bec0-2806fcca7a6e)
+![Screenshot 2023-08-14 222519](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/7a960a98-2384-416c-a7c9-869a206b1195)
+![Screenshot 2023-08-14 222716](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/7d8edb45-2398-44d4-bf57-19e16a674cfc)
+
 
 I have also replaced the sketch and splite off the void loop into seperate function calls which helps make the code easier to understand and maintain. You can now set the min max vale at the start of the skecth. And it now reads the state of the GPIO pin 23 for sending the MQTT heater status. This fixed an issue with the way I had written the previous versions.
 
