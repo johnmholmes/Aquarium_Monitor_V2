@@ -45,7 +45,7 @@ I will break down the various functions to help with understanding them.
     After the EEPROM write operation and update of tracking variables, the ESP32 is rebooted using ESP.restart().
 
 
-    In summary, this version of the function improves efficiency by writing to EEPROM only when there are actual changes in the values of minTempThreshold and maxTempThreshold. This reduces unnecessary wear on the EEPROM 
+    In summary, this function improves efficiency by writing to EEPROM only when there are actual changes in the values of minTempThreshold and maxTempThreshold. This reduces unnecessary wear on the EEPROM 
 memory and optimizes the program's behavior. The function also ensures that the reboot is timed close to the desired interval while considering changes in the threshold values.
 
 ----
