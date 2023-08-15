@@ -2,6 +2,8 @@
 
 I will break down the various functions to help with understanding them.
 
+<ins> Reboot And Store Min Max Values To EEPROM</ins>
+
 ![Screenshot 2023-08-15 175711](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/1f83eca9-e75a-49c1-bc99-899fb3d0a70a)
 
 1. if ((millis() % restartTimer) < 2000) {
