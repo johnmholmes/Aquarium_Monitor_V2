@@ -4,6 +4,8 @@
 
 The Tests are quite interesting and here is a graph showing the heat on / Off cycle, this shows the 200 watt heater is taking 1 hour to heat the tank.
 
+The variations in the graph are caused by me trying different setting for the module to check that the new variables are working. This will be narrowed down tomorrow after a 24 hour period with the lates settings.
+
 ![Screenshot 2023-08-14 222519](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/7a960a98-2384-416c-a7c9-869a206b1195)
 ![Screenshot 2023-08-14 222716](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/7d8edb45-2398-44d4-bf57-19e16a674cfc)
 
