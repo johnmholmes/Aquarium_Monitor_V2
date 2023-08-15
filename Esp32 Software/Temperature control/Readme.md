@@ -19,7 +19,7 @@ Version 1 did not get uploaded so we start with:
 5. Version 1e This was to allow the Node Red to send messages to change the upper and lower thresholds
 6. Version 1f This version was to get the feedback to work with Asycnmqtt
 7. Version 1g This version has done away with the AsycnMqtt library and just uses the #include <PubSubClient.h> libaray This now is almost the project completed
-8. Version 1h This will include a rebot every 28 days to avoid timer roll over and also saving the last changes to the min max values and reload after reboot.
+8. Version 1h This version is the final installment for this module, it now has any changes to the 2 varibles being saved to the EEprom and a reboot timer to avoid the roll over of the millis() function timer.
 
 --------------
 # Version 2 Main control and monitor module
