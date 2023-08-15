@@ -2,17 +2,16 @@
 
 # 14 August
 
-The Tests are quite interesting and here is a graph showing theheat on / Off cycle, this shows the 200 watt heater is taking 1 hour to heat the tank.
+The Tests are quite interesting and here is a graph showing the heat on / Off cycle, this shows the 200 watt heater is taking 1 hour to heat the tank.
 
 ![Screenshot 2023-08-14 222519](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/7a960a98-2384-416c-a7c9-869a206b1195)
 ![Screenshot 2023-08-14 222716](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/7d8edb45-2398-44d4-bf57-19e16a674cfc)
-
 
 I have also replaced the sketch and splite off the void loop into seperate function calls which helps make the code easier to understand and maintain. You can now set the min max vale at the start of the skecth. And it now reads the state of the GPIO pin 23 for sending the MQTT heater status. This fixed an issue with the way I had written the previous versions.
 
 I have now added a folder to the Esp32 Software section that has the previous codes and a brief overview of the changes.
 
-The final version of the backup is nearly complete and this has a reboot timer being added. This will all e shown in the next video release planed for Wednesday 16 August
+The final version of the backup is nearly complete and this has a reboot timer being added. This will all be shown in the next video the release is planed for Wednesday 16 August
 
 ----
 
