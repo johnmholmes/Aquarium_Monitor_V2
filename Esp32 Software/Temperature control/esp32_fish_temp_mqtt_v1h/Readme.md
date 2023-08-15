@@ -50,6 +50,22 @@ memory and optimizes the program's behavior. The function also ensures that the 
 
 ----
 
+# EEPROM Min Max Value Restore
+
+This function get during the void setup() funtion and resets the globa variables.
+
+![Screenshot 2023-08-15 192809](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/42a27b74-3b4d-456c-808e-0ba182ce0a63)
+
+1. minTempThreshold = EEPROM.read(0);
+2. maxTempThreshold = EEPROM.read(1);
+
+   <ins> This read the EEPROM declared positions and resets the 2 required variables
+
+2. lastMinTempThreshold = minTempThreshold;
+3. lastMaxTempThreshold = maxTempThreshold;   
+
+   In summary, the purpose of this function is to retrieve the minimum and maximum temperature threshold values from EEPROM and store them in corresponding variables. Additionally, it keeps track of the previous values of these thresholds using lastMinTempThreshold and lastMaxTempThreshold variables. This could be useful for comparison or logging purposes, allowing the program to determine if the threshold values have been changed since the last time they were read from EEPROM.
+----
 
 
 
