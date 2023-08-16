@@ -10,8 +10,8 @@
 #define MQTT_PORT 1883            // MQTT Broker Port
 
 
-const char* MQTT_PUB_TEMP = "Backup_Heater_Control"; // Temperature MQTT Topic
-const char* MQTT_PUB_HEAT = "Backup_Heater_Status";  // Heater Status MQTT Topic
+const char* MQTT_PUB_TEMP = "backupHeaterControl"; // Temperature MQTT Topic
+const char* MQTT_PUB_HEAT = "backupHeaterStatus";  // Heater Status MQTT Topic
 const int oneWireBus = 4;
 unsigned long previousMillis = 0;
 unsigned long thenMillis = 0;
