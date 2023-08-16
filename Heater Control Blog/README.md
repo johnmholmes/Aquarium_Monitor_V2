@@ -1,5 +1,9 @@
 # Heater Control Blog
 
+# 16 August
+
+The final version is now complete the changes to the code to use a simpler mqtt library which does not need the complexity of the Asycnmqtt library I feel more comforatble with. Its only disadvantage is it boes not have the quality of service or the retain flag.
+
 # 14 August
 
 The Tests are quite interesting and here is a graph showing the heat on / Off cycle, this shows the 200 watt heater is taking 1 hour to heat the tank.
