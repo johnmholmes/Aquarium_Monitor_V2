@@ -2,7 +2,7 @@
 #include <DallasTemperature.h>
 
 // Pin for the 1-Wire bus
-const int oneWireBusPin = 5;  // You can choose any available GPIO pin
+const int oneWireBusPin = 4;  // You can choose any available GPIO pin
 
 // Create a OneWire instance to communicate with the sensors
 OneWire oneWire(oneWireBusPin);
