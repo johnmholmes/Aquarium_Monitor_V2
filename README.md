@@ -97,6 +97,7 @@ This has now beeen started and the sketch has been written for the Esp32 and is 
 4. Visual display via LEDs above the tank.
 5. Ph monitor module. This I have tried before, but may revisit this project again as it could be handy if it gives consistant results.
 6. 24 volt distrobution module. (Currently I have 4 devices that run on 24 volt, each has its own power tranformer. This module would use one wall brick transformer with an out put of 5 Amps which would use an Esp32 to turn on and off pumps and wave makers as required.)
+7. Possible current monitoring of various devices to prodict failures.
    
 ----
 
