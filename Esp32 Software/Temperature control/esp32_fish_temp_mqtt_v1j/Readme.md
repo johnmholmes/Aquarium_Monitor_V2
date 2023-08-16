@@ -1,8 +1,8 @@
-# Version 1h explained
+# Version 1j explained
 
 I will break down the various functions to try and help with understanding them.
 
-One thing to be aware off is if you are used to using the EEPROM.h for Arduino Board EEPROM storage the ESP32 version is different so take a look at https://github.com/espressif/arduino-esp32/tree/master to ensure you are fully coversant with its use. This had me at first.
+One thing to be aware off is if you are used to using the EEPROM.h for Arduino Board EEPROM storage the ESP32 version is different so take a look at https://github.com/espressif/arduino-esp32/tree/master to ensure you are fully coversant with its use. This had me at first also it does not work as expected with floating point numbers. Hence the latest version to resolve that issue.
 
 ----
 
