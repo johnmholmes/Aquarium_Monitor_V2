@@ -23,7 +23,11 @@ Version 1 did not get uploaded so we start with:
 9. Version 1J Adressed an issues with the EEPROM routine which caused an issues this has been addressed and now the controller module is working, however it can control the tank temperature to within a few decimal places. Storing the changes in EEPROM and restoring them is more difficult. I have this code at the moment rebooting everyday to make sure it is stable I have also fixed the spikes in the grap on Node red. This is done by changing the names of the mqtt topics, as the previous Asyncmqtt library had left some previuos data on my Raspberry Pi.
 
 --------------
-# Version 2 Main control and monitor module
+# Version 1 Main Temperature monitor module
+
+The first steps have been done and this moduel is reporting the 3 main temperature reading for the Display tank, sump tank, and the living room. I am not planning on doing anything fancy with this moduel.
+
+1. Version 1 This module is planned to only monitor 3 DS18B20 sensors and report back to the Raspberry Pi
 
 
 
