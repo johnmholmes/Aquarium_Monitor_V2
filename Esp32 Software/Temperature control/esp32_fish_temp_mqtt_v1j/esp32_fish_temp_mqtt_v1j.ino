@@ -18,7 +18,7 @@ unsigned long thenMillis = 0;
 const long interval = 10000;
 const long interval1 = 15000;
 float temp = 0.0;
-float minTempThreshold = 24.6;
+float minTempThreshold = 24.0;
 float maxTempThreshold = 25.0;
 
 const int heaterPin = 23;
