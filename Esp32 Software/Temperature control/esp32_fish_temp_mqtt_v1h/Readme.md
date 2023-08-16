@@ -4,6 +4,8 @@ I will break down the various functions to try and help with understanding them.
 
 One thing to be aware off is if you are used to using the EEPROM.h for Arduino Board EEPROM storage the ESP32 version is different so take a look at https://github.com/espressif/arduino-esp32/tree/master to ensure you are fully coversant with its use. This had me at first.
 
+I have found that using the EEPROM is handy, however there is an issue storing floating point numbers. So with this in mind I am more than happy to settle for a 1 degrree Celsius variation in water temperature.
+
 ----
 
 # Reboot And Store Min Max Values To EEPROM
