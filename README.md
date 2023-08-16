@@ -68,7 +68,7 @@ Subsequent components will be incorporated as the project progresses.
    1. Give acces to the Raspberry Pi via VNC so I can access and control the Pi from anywhere in the world. See the folder VNC for details.
    2. Install Node Red to create a Graphical User Interface. See Node Red folder for details.
    3. Install Sqlite3 for database uses. See Sqlite folder for details.
-   4. BackUp heater control now complete and going through a week long testing running the tank at a slightly cooler temperature than normal between 24.6 and 25.0 Deg C.
+   4. BackUp heater control module now complete and going through a 4 week long testing running the tank at a slightly cooler temperature than normal between 24.6 and 25.0 Deg C.
 
 ----
 
