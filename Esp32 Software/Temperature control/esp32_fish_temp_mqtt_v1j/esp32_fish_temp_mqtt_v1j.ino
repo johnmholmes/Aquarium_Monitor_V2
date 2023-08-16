@@ -37,9 +37,10 @@ PubSubClient mqttClient(espClient);
 void espRebootTimer() {
   if ((millis() % restartTimer) < 2000) {
     if (minTempThreshold != lastMinTempThreshold || maxTempThreshold != lastMaxTempThreshold) {
-      EEPROM.write(0, minTempThreshold);
-      EEPROM.write(1, maxTempThreshold);
+      EEPROM.write(0, int(minTempThreshold ));
+      EEPROM.write(1, int(maxTempThreshold ));
       EEPROM.commit();
+      EEPROM.begin(512);
       lastMinTempThreshold = minTempThreshold;
       lastMaxTempThreshold = maxTempThreshold;
     }
@@ -48,8 +49,8 @@ void espRebootTimer() {
 }
 
 void restoreFromEEPROM() {
-  minTempThreshold = EEPROM.read(0);
-  maxTempThreshold = EEPROM.read(1);
+  minTempThreshold = float(EEPROM.read(0));
+  maxTempThreshold = float(EEPROM.read(1));
   lastMinTempThreshold = minTempThreshold;
   lastMaxTempThreshold = maxTempThreshold;
 }
@@ -89,6 +90,22 @@ void setup() {
   Serial.begin(115200);
   sensors.begin();
   EEPROM.begin(512);
+  float storedMinTemp = EEPROM.read(0);
+  float storedMaxTemp = EEPROM.read(1);
+
+  if (storedMinTemp == 0xFF && storedMaxTemp == 0xFF) {
+
+    EEPROM.write(0, minTempThreshold);
+    EEPROM.write(1, maxTempThreshold);
+    EEPROM.commit();
+}   else {
+      minTempThreshold = storedMinTemp;
+      maxTempThreshold = storedMaxTemp;
+}
+  
+
+
+
   restoreFromEEPROM();
   pinMode(2, OUTPUT);
   pinMode(heaterPin, OUTPUT);
