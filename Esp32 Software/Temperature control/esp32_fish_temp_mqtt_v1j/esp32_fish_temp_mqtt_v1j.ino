@@ -102,10 +102,7 @@ void setup() {
       minTempThreshold = storedMinTemp;
       maxTempThreshold = storedMaxTemp;
 }
-  
-
-
-
+ 
   restoreFromEEPROM();
   pinMode(2, OUTPUT);
   pinMode(heaterPin, OUTPUT);
@@ -113,8 +110,6 @@ void setup() {
 
   Serial.println(minTempThreshold);
   Serial.println(maxTempThreshold);
-
-  delay(5000);
 
   WiFi.onEvent(WiFiEvent);
   connectToWifi();
