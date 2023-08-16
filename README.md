@@ -78,9 +78,9 @@ This ongoing aspect of the project is currently in progress due to various reaso
 
 Temperature monitoring involves the Display tank, Sump tank, and Living Room, all facilitated through Node Red. This has been partially demonstrated in several videos. However, I am still in the process of determining the optimal approach for the final implementation. Presently, I'm grappling with the challenge of flow stalling caused by the available Nodes when working with the DS18B20 sensor. While flow stalling isn't my foremost concern at the moment, I am more troubled by the occurrence of false readings. I am engaged in a personal deliberation regarding whether I should transition all the DS18B20 sensors to a single ESP32, utilizing MQTT to transmit the data to the Raspberry Pi. Concurrently, I am dedicating myself to further learning in Java to investigate the possibility of filtering out these erroneous readings, thereby preventing their display on the graph.
 
-Another facet of the project pertains to temperature monitoring solely in the Display tank, wherein an ESP32 is employed. This ESP32 also encompasses contingency control over a single heater within the tank, configured to activate if the Display temperature falls below 23.5 degrees Celsius. This secondary heater is equipped with a thermostat set at 25 degrees Celsius. This component is still a work in progress and under development.
+Another facet of the project pertains to temperature monitoring solely in the Display tank, wherein an ESP32 is employed. This ESP32 also encompasses contingency control over a single heater within the Display tank, configured to activate if the Display temperature falls below 24.6 degrees Celsius and turn off at 25.0 degrees Celsius. This secondary heater is equipped with a thermostat set at 25 degrees Celsius. This modu is completed.
 
-The module is under going various test to ensure smoth operation for the backup controller. Once that is complete I will produce the main 3 sensor module which the sketch is being worked on now.
+The next module is under going various test to ensure smoth operation for 3 sensors which the sketch is being worked on now.
 
 ----
 
