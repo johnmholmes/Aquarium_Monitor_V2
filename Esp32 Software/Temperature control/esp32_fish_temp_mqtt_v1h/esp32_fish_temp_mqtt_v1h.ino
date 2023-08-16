@@ -94,6 +94,8 @@ void setup() {
   pinMode(heaterPin, OUTPUT);
   digitalWrite(heaterPin, HIGH);
 
+  
+
   WiFi.onEvent(WiFiEvent);
   connectToWifi();
 
