@@ -2,7 +2,7 @@
 
 # 16 August
 
-The final version is now complete the changes to the code to use a simpler mqtt library which does not need the complexity of the Asycnmqtt library I feel more comforatble with. Its only disadvantage is it boes not have the quality of service or the retain flag.
+The final version is now complete the changes to the code to use a simpler mqtt library which does not need the complexity of the Asycnmqtt library I feel more comforatble with. Its only disadvantage is it boes not have the quality of service or the retain flag. It is possible to controll the temperature to a few decimal places, however this becomes a problem when saving and importing them from the EEPROM So for this setup I will be happy to accept a 1 degree Celisus difference.
 
 # 14 August
 
