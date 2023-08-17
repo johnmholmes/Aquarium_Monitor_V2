@@ -8,7 +8,7 @@ The esp32_fish_temp_mqtt_v1 is a single DS18B20 sensor on the 1 wire bus, and wi
 
 --------------
 
-# Version 1 BackUp controller
+# Version 1 BackUp controller The esp32_fish_temp_mqtt_v1
 
 Version 1 did not get uploaded so we start with: 
 
