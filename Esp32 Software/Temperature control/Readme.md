@@ -27,7 +27,7 @@ Version 1 did not get uploaded so we start with:
 
 The first steps have been done and this moduel is reporting the 3 main temperature reading for the Display tank, sump tank, and the living room. I am not planning on doing anything fancy with this moduel.
 
-1. Version 1 This module is planned to only monitor 3 DS18B20 sensors and report back to the Raspberry Pi
+1. Version 1 This version is planned to only monitor 3 DS18B20 sensors and report back to the Raspberry Pi. This is done and being tested at the moment it is reporting every 5 seconds for testing purposes this can be dropped down to every few minutes in the future. It will also reboot the esp32 to avoid millis roll over time issues this is happening every 2 days at the moment.
 
 
 
