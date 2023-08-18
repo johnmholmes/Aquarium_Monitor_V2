@@ -27,7 +27,7 @@ float temperature3 = 0;
 unsigned long previousMillis = 0;
 unsigned long previousMillis1 = 0;
 
-const long interval = 60000;  // Interval in milliseconds (60 seconds)
+const long interval = 1800000;  // Interval in milliseconds (3 minutes which will make the graph more useful)
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -47,7 +47,7 @@ void setup() {
   Serial.println("Connected to WiFi");
 
   client.setServer(mqttServer, mqttPort);
-  client.setKeepAlive(60);
+  client.setKeepAlive(180);
 
   while (!client.connected()) {
     if (client.connect("ESP32Client")) {
