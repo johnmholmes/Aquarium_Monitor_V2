@@ -25,7 +25,9 @@ float temperature2 = 0;
 float temperature3 = 0;
 
 unsigned long previousMillis = 0;
-const long interval = 5000;  // Interval in milliseconds (60 seconds)
+unsigned long previousMillis1 = 0;
+
+const long interval = 60000;  // Interval in milliseconds (60 seconds)
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -45,6 +47,7 @@ void setup() {
   Serial.println("Connected to WiFi");
 
   client.setServer(mqttServer, mqttPort);
+  client.setKeepAlive(60);
 
   while (!client.connected()) {
     if (client.connect("ESP32Client")) {
@@ -58,17 +61,19 @@ void setup() {
 
 
 void espRebootTimer() {
-  if (millis() % restartTimer)  {
-    
-    }
+  unsigned long currentMillis1 = millis(); 
+
+  if (currentMillis1 - previousMillis1 >= restartTimer) {
+    previousMillis1 = currentMillis1;
     ESP.restart();
+  }
 }
 
 
 //-----------------------------------------------------------------------
 void reconnect() {
   while (!client.connected()) {
-    if (client.connect("ESP32Client")) {
+    if (client.connect("billClient")) {
       Serial.println("Reconnected to MQTT Broker");
     } else {
       Serial.print("MQTT Reconnection Failed, Retrying in 5 seconds...");
