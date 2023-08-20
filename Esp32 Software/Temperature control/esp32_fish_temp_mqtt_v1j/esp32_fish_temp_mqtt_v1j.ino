@@ -18,12 +18,12 @@ unsigned long thenMillis = 0;
 const long interval = 10000;
 const long interval1 = 15000;
 float temp = 0.0;
-float minTempThreshold = 24.0;
+float minTempThreshold = 24.6;
 float maxTempThreshold = 25.0;
 
 const int heaterPin = 23;
 
-// These ar used for the storing of the EEPROM only when the variables have been changed.
+// These are used for the storing of the EEPROM only when the variables have been changed.
 unsigned long restartTimer = 86400000; // 28 day reset timer 2419200000
 float lastMinTempThreshold = minTempThreshold;  // Track last-written values
 float lastMaxTempThreshold = maxTempThreshold;
@@ -117,7 +117,7 @@ void setup() {
   mqttClient.setServer(MQTT_HOST, MQTT_PORT);
   mqttClient.setCallback(onMqttMessage);
 
-  // Additional setup code here...
+  
 }
 
 void controlHeater() {
