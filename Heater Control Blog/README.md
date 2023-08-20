@@ -2,7 +2,7 @@
 
 # 18 August
 
-After a few days of testing I can report that the backup heater cmodule is working and is rebooting and is working with floating point numbers as well.
+After a few days of testing I can report that the backup heater module is working and is rebooting.
 
 I have also been testing the new Main temperature module and that is working as expected. I now need to create a simple box for the unit and get it finally installed.
 
