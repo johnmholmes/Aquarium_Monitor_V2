@@ -82,14 +82,17 @@ This function is attempting to establish a connection to an MQTT broker using th
 2. while (!mqttClient.connected()) {: This line initiates a while loop that continues as long as the MQTT client (mqttClient) is not connected to the MQTT broker. In other words, it keeps looping until the connection is successfully established.
 3. Serial.println("Attempting MQTT connection...");: This line sends a message to the serial port (often used for debugging purposes) indicating that an attempt to connect to the MQTT broker is being made.
 4. if (mqttClient.connect("ESP8266Client")) {: Here, an attempt to connect to the MQTT broker is made using the connect method of the mqttClient object. The argument "ESP8266Client" is the client identifier that will be used when connecting to the broker.
-   1.If the connection is successful (returns true), the code inside this block will execute.
-   2.The code block within the if statement logs a message indicating a successful connection and then subscribes to two MQTT topics: "backupMaxSetting" and "backupMinSetting".
-   } else {: If the connection attempt inside the if statement fails (returns false), the code within this else block will execute.
-5. } else {: If the connection attempt inside the if statement fails (returns false), the code within this else block will execute.
-6. Serial.print("Failed, rc=");: This line logs a message indicating that the connection attempt failed, followed by the return code (status) of the MQTT client's state.
-7. Serial.print(mqttClient.state());: This line prints the numerical state of the MQTT client, which can help diagnose the reason for the failed connection attempt. Different numerical states represent different connection statuses.
-8. Serial.println(" retrying in 5 seconds");: This line logs a message indicating that a retry will occur in 5 seconds.
-9. delay(5000);: This line introduces a delay of 5 seconds using the delay function. It's a common practice to wait a short amount of time before attempting to connect again, to avoid overwhelming the MQTT broker with connection attempts.
+
+   1. If the connection is successful (returns true), the code inside this block will execute.
+
+   2. The code block within the if statement logs a message indicating a successful connection and then subscribes to two MQTT topics: "backupMaxSetting" and "backupMinSetting".
+      } else {: If the connection attempt inside the if statement fails (returns false), the code within this else block will execute.
+   
+6. } else {: If the connection attempt inside the if statement fails (returns false), the code within this else block will execute.
+7. Serial.print("Failed, rc=");: This line logs a message indicating that the connection attempt failed, followed by the return code (status) of the MQTT client's state.
+8. Serial.print(mqttClient.state());: This line prints the numerical state of the MQTT client, which can help diagnose the reason for the failed connection attempt. Different numerical states represent different connection statuses.
+9. Serial.println(" retrying in 5 seconds");: This line logs a message indicating that a retry will occur in 5 seconds.
+10. delay(5000);: This line introduces a delay of 5 seconds using the delay function. It's a common practice to wait a short amount of time before attempting to connect again, to avoid overwhelming the MQTT broker with connection attempts.
 
 The function will keep looping through the connection attempt until it successfully connects to the MQTT broker. Once connected, it subscribes to the specified topics for receiving messages from the broker. If the connection fails, it waits for 5 seconds before making another connection attempt. This process continues until a successful connection is established.
 
