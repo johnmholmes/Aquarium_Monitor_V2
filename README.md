@@ -86,7 +86,7 @@ The next module is under going various test to ensure smoth operation for 3 sens
 
 # Auto Top Off
 
-This has now beeen started and the sketch has been written for the Esp32 and is under going various test to ensure it is performing how I want it too. The case for the Esp32 is currently being 3D printed and should be completed over the weekend. I am just adding the last bit to the sketch to allow for remote turning off of the refil only.
+This has now beeen started and the sketch has been written for the Esp32 and is under going various test to ensure it is performing how I want it too. The case for the Esp32 is currently being 3D printed and should be completed over the weekend. I am just adding the last bit to the sketch to allow for remote turning off of the refil only. You can follow the progress in the Esp32 Software folder inside there is the Esp32_ato folder and a readme there.
 
 ----
 # To Be Started
