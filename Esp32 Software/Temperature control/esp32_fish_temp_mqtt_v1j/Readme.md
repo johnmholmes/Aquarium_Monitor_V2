@@ -76,7 +76,9 @@ This fuction get called from the void main()
 
 ![Screenshot 2023-08-20 212810](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/80cb28ff-a069-49a0-b9ed-95d0a7afa114)
 
-This function is attempting to establish a connection to an MQTT broker using the MQTT client library, presumably on an ESP8266-based device (as indicated by the client name "ESP8266Client"). MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used for communication between devices over a network. Let's break down the function step by step:
+This function is attempting to establish a connection to an MQTT broker using the MQTT client library, this uses the same details for the Esp32 as the ESP8266-based device (as indicated by the client name "ESP8266Client"). MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used for communication between devices over a network. 
+
+Let's break down the function step by step:
 
 1. void connectToMqtt(): This line defines a function named connectToMqtt with a void return type, meaning it doesn't return any value.
 2. while (!mqttClient.connected()) {: This line initiates a while loop that continues as long as the MQTT client (mqttClient) is not connected to the MQTT broker. In other words, it keeps looping until the connection is successfully established.
