@@ -82,6 +82,8 @@ Another facet of the project pertains to temperature monitoring solely in the Di
 
 The next module is under going various test to ensure smoth operation for 3 sensors which the sketch is being worked on now.
 
+I have also sorted out the text message alearts which will be shown in video 20 the base script was shown in video 19 for a heart beat text message using Amazon AWS account using SNS messaging.
+
 ----
 
 # Auto Top Off
