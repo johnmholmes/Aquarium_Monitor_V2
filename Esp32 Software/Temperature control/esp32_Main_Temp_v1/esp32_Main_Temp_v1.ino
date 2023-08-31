@@ -13,6 +13,8 @@ const char* display = "displayTemp";
 const char* sump = "sumpTemp";
 const char* room = "roomTemp";
 
+const int ledPin = 13; 
+
 unsigned long restartTimer = 172800000;  // every 2 days
 
 
@@ -26,9 +28,9 @@ float temperature3 = 0;
 
 unsigned long previousMillis = 0;
 unsigned long previousMillis1 = 0;
-
-const long interval = 1800000;  // Interval in milliseconds (3 minutes which will make the graph more useful)
-
+unsigned long previousMillis2 = 0;
+const long interval = 180000;  // Interval in milliseconds (3 minutes which will make the graph more useful)
+const long intervalTog = 10000; 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -36,6 +38,7 @@ PubSubClient client(espClient);
 void setup() {
   Serial.begin(115200);
   sensors.begin();
+  pinMode(ledPin, OUTPUT);
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
@@ -111,12 +114,26 @@ void updateTemperatures() {
   }
 }
 
+void toggleLED() {
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis2 >= intervalTog) {
+    previousMillis2 = currentMillis;  // Save the last time the LED was toggled
+    
+    static bool ledState = LOW;  // Keeps track of LED state
+    ledState = !ledState;        // Toggle LED state
+
+    digitalWrite(ledPin, ledState);
+  }
+}
+
 void loop() {
   if (!client.connected()) {
     reconnect();
   }
   client.loop();
   updateTemperatures();
+  toggleLED();
 
   espRebootTimer();
 
