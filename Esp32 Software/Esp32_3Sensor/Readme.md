@@ -1,10 +1,8 @@
 # ESP32 Sketches for 3 Ds18b20 sensors
 
-The folder will have multiple sketches which will show the progress of this module.
+This sketch I used to get started with the ds18b20 sensors to just read the values in the serial monitor. This has now been added to the Temperature control folder
 
-1. 3Sensor_v1 This sketch just reads the 3 sensors connected to pin 5 and outputs the reading to the Serial monitor the rate is 115200.
-2. 
-
+I am leaving it here as its a simple example.
 
 
 
