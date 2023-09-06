@@ -88,7 +88,7 @@ I have also sorted out the text message alearts which will be shown in video 20 
 
 # Auto Top Off
 
-This has now beeen started and the sketch has been written for the Esp32 and is under going various test to ensure it is performing how I want it too. The case for the Esp32 is currently being 3D printed and should be completed over the weekend. I am just adding the last bit to the sketch. You can follow the progress in the Esp32 Software folder inside there is the Esp32_ato folder and a readme there.
+The Ato module is funtioning now and testing is underway I will evaluate more in 1 weeks time as I tend to come up with better sloutions during the test stages.
 
 ----
 # To Be Started
