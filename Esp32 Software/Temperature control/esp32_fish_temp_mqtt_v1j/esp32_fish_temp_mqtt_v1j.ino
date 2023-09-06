@@ -181,10 +181,7 @@ void loop() {
   }
 
   controlHeater();
-  if (WiFi.status() != WL_CONNECTED) {
-    connectToWifi();
-  }
-
+  
   if (!mqttClient.connected()) {
     connectToMqtt();
   }
