@@ -31,7 +31,8 @@ void connectToWifi() {
 void connectToMqtt() {
   while (!mqttClient.connected()) {
     Serial.println("Attempting MQTT connection...");
-    if (mqttClient.connect("johnsClient")) {
+    // the mqttClient.connect (needs to be a unique name for each device on the network)
+    if (mqttClient.connect("johnsClient2")) {
       Serial.println("Connected to MQTT broker");
     } else {
       Serial.print("Failed, rc=");
@@ -84,7 +85,9 @@ void setup() {
   digitalWrite(pump, LOW);
   connectToWifi();
   mqttClient.setServer(MQTT_HOST, MQTT_PORT);
-  mqttClient.setKeepAlive(120);
+  mqttClient.setKeepAlive(60);  // Adjust as needed (e.g., 60 seconds)
+
+  
 }
 
 void loop() {
@@ -93,6 +96,10 @@ void loop() {
   }
   if (!mqttClient.connected()) {
     connectToMqtt();
+  }
+  // Maintain the MQTT connection
+  if (mqttClient.connected()) {
+    mqttClient.loop();
   }
 
   // Call the function to read sensor values and determine states
