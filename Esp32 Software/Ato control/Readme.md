@@ -1,13 +1,9 @@
-# ESP32 Sketches
+# ATO Controller
 
-This folder will hold various skecthes as I create them for the Esp32 modules. 
+This folder will hold various skecthes as I create them for the Esp32 Auto Top Off modules. 
 
-   1. The temperature modules I have two different units working on my system.
-   2. The Ato unit is now added to the github following on from video 21.
-   3. The simple display is also now uploaded but is going to be updated so this will see a number of versions.
-
-As I add more devices the list will be added to.
-
+   1. Version 2 was the first pubished version which was working but I was not happy with it.
+   2. Version 3 has been changed so that it only uses 2 topics to send out the current state of the Sump ad the ATO barrel. it still controls the ato pump on pin 5 for 10 secods. I will be creating the flow changes as well and add them to the relevent folder in the next few days. This will also need a change to be made for the display module to use the new mqtt payloads. The new module is being tested now to check for bugs.
 
 
 
