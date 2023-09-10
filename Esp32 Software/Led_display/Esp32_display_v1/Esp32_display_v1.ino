@@ -55,6 +55,7 @@ void setup_wifi() {
   }
 }
 
+// waiting for meddages to arrive on the subscribed topic then updayes the states and calls the update led function
 void callback(char* topic, byte* payload, unsigned int length) {
   String message = "";
 
@@ -84,6 +85,7 @@ void updateLEDs() {
     digitalWrite(DISP_LED_YELLOW, LOW);
   }
 
+  // Control Ato LED on pin 16
   if (currentAtoState == "low water") {
     digitalWrite(ATO_LED_RED, HIGH);
   } 
@@ -106,7 +108,7 @@ void updateLEDs() {
     digitalWrite(SUMP_LED_RED, HIGH);
   }
 
-  // control display leds on pins 5, and 18
+  // control display LEDs on pins 5, and 18
   if (currentDisplayState == "normal") {
     digitalWrite(DISP_LED_GREEN, HIGH);
     digitalWrite(DISP_LED_RED, LOW);
