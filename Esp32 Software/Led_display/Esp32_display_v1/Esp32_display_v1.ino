@@ -16,10 +16,12 @@ const int DISP_LED_RED = 18;
 const char* ATO_TOPIC = "AtoState";
 const char* SUMP_TOPIC = "SumpState";
 const char* DISPLAY_TOPIC ="DisplayState";
+const char* HEART_TOPIC = "DispHeartState";
 
 String currentSumpState = ""; // To store sump state
 String currentAtoState = "";  // To store ATO state
 String currentDisplayState = "";  // To store ATO state
+String currentHeartState ="";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -65,13 +67,23 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }else if (strcmp(topic, DISPLAY_TOPIC) == 0) {
     message = String((char*)payload, length);
     currentDisplayState = message;
+  }else if (strcmp(topic, HEART_TOPIC) == 0) {
+    message = String((char*)payload, length);
+    currentHeartState = message;
   }
 
   updateLEDs();
 }
 
 void updateLEDs() {
-  // Control ATO LED on pin 16
+  // Control Display LED on pin 17
+  if (currentHeartState == "on") {
+    digitalWrite(DISP_LED_YELLOW, HIGH);
+  } 
+  if (currentHeartState == "off") {
+    digitalWrite(DISP_LED_YELLOW, LOW);
+  }
+
   if (currentAtoState == "low water") {
     digitalWrite(ATO_LED_RED, HIGH);
   } 
@@ -94,13 +106,11 @@ void updateLEDs() {
     digitalWrite(SUMP_LED_RED, HIGH);
   }
 
-  // control display leds on pins 17,5, and 18
+  // control display leds on pins 5, and 18
   if (currentDisplayState == "normal") {
-    digitalWrite(DISP_LED_YELLOW, LOW);
     digitalWrite(DISP_LED_GREEN, HIGH);
     digitalWrite(DISP_LED_RED, LOW);
   } else if (currentDisplayState == "high"){
-    digitalWrite(DISP_LED_YELLOW, LOW);
     digitalWrite(DISP_LED_GREEN, LOW);
     digitalWrite(DISP_LED_RED, HIGH);
   }
@@ -115,6 +125,7 @@ void reconnect() {
       client.subscribe(ATO_TOPIC);
       client.subscribe(SUMP_TOPIC);
       client.subscribe(DISPLAY_TOPIC);
+      client.subscribe(HEART_TOPIC);
 
 
     } else {
