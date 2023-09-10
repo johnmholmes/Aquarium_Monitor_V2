@@ -10,7 +10,7 @@ const char* MQTT_PUB_ATO = "AtoState";
 
 const int sumpLowPin = 13;
 const int sumpHighPin = 12;
-const int atoLowPin = 14;
+const int atoLowPin = 27;
 const int pump = 5;
 
 const char* currentSumpState = "";
