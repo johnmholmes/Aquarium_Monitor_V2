@@ -14,7 +14,7 @@ These units will need to be cleaned every now and then to make sure they keep gi
 There are also some 3 wire version available but finding a good example on using them seems very hard to find. The ones I got had different colours compared to some i seen on the ebay listing.
 
    1. Version 2 was the first pubished version which was working but I was not happy with it.
-   2. Version 3 has been changed so that it only uses 2 topics to send out the current state of the Sump ad the ATO barrel. it still controls the ato pump on pin 5 for 10 secods. I will be creating the flow changes as well and add them to the relevent folder in the next few days. This will also need a change to be made for the display module to use the new mqtt payloads. The new module is being tested now to check for bugs. The two topics are "SumpState" which has 3 possible outputs "low, normal, high" & "AtoState" which as 2 possible outputs "low water, high water".
+   2. Version 3 has been changed so that it only uses 2 topics to send out the current state of the Sump ad the ATO barrel. it still controls the ato pump on pin 5 for 10 secods. I will be creating the flow changes as well and add them to the relevent folder in the next few days. This will also need a change to be made for the display module to use the new mqtt payloads. The new module is being tested now to check for bugs. The two topics are "SumpState" which has 3 possible outputs "low, normal, and high" & "AtoState" which as 2 possible outputs "low water, high water".
 
 ----
 
