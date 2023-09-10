@@ -64,7 +64,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     currentSumpState = message;
   }else if (strcmp(topic, DISPLAY_TOPIC) == 0) {
     message = String((char*)payload, length);
-    currentSumpState = message;
+    currentDisplayState = message;
   }
 
   updateLEDs();
