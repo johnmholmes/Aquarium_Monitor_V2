@@ -1,0 +1,226 @@
+[
+    {
+        "id": "47982c07aecfe4d1",
+        "type": "group",
+        "z": "75b48f8a75686579",
+        "name": "",
+        "style": {
+            "fill": "#ffffbf",
+            "label": true
+        },
+        "nodes": [
+            "3045df148523a2db",
+            "83cb2216bb0c38ae",
+            "49d8d5b216479344",
+            "70a46388552d3428",
+            "acf0c8a9ff74e2f3",
+            "c06112ce4793a5b9",
+            "780dc4fdda46694a",
+            "b0080288d01d77b7"
+        ],
+        "x": 54,
+        "y": 279,
+        "w": 992,
+        "h": 302
+    },
+    {
+        "id": "3045df148523a2db",
+        "type": "function",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "function 3",
+        "func": "if (msg.payload == \"low\") {\n    msg.color = \"yellow\";\n} else if (msg.payload == \"normal\") {\n    msg.color = \"green\";\n} else if (msg.payload == \"high\") {\n    msg.color = \"red\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "70a46388552d3428"
+            ]
+        ]
+    },
+    {
+        "id": "83cb2216bb0c38ae",
+        "type": "mqtt in",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "",
+        "topic": "SumpState",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3d66ad6c381a3af0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "49d8d5b216479344",
+                "3045df148523a2db"
+            ]
+        ]
+    },
+    {
+        "id": "49d8d5b216479344",
+        "type": "debug",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "debug 20",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "70a46388552d3428",
+        "type": "ui_text",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "group": "a6e358b.672ffa8",
+        "order": 5,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Sump Water Level",
+        "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "x": 930,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "acf0c8a9ff74e2f3",
+        "type": "mqtt in",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "",
+        "topic": "AtoState",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3d66ad6c381a3af0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 480,
+        "wires": [
+            [
+                "c06112ce4793a5b9",
+                "780dc4fdda46694a"
+            ]
+        ]
+    },
+    {
+        "id": "c06112ce4793a5b9",
+        "type": "debug",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "debug 22",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "780dc4fdda46694a",
+        "type": "function",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "function 4",
+        "func": "if (msg.payload == \"high water\") {\n    msg.color = \"green\";\n} else if (msg.payload == \"low water\") {\n    msg.color = \"red\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 540,
+        "wires": [
+            [
+                "b0080288d01d77b7"
+            ]
+        ]
+    },
+    {
+        "id": "b0080288d01d77b7",
+        "type": "ui_text",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "group": "a6e358b.672ffa8",
+        "order": 5,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Top Off Water Level",
+        "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "x": 930,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3d66ad6c381a3af0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a6e358b.672ffa8",
+        "type": "ui_group",
+        "name": "Auto Top Off Module Status",
+        "tab": "4e528085.a1bfa",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "4e528085.a1bfa",
+        "type": "ui_tab",
+        "name": "Auto Top Off",
+        "icon": "dashboard",
+        "order": 0,
+        "disabled": false,
+        "hidden": false
+    }
+]
