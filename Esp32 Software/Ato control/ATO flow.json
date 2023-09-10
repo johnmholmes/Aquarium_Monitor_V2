@@ -16,12 +16,16 @@
             "acf0c8a9ff74e2f3",
             "c06112ce4793a5b9",
             "780dc4fdda46694a",
-            "b0080288d01d77b7"
+            "b0080288d01d77b7",
+            "a1bf14e5042aa68d",
+            "e129ed9b23429587",
+            "86b11b8cfca8ad13",
+            "bb03b73ad1fabdd2"
         ],
         "x": 54,
         "y": 279,
-        "w": 992,
-        "h": 302
+        "w": 1012,
+        "h": 402
     },
     {
         "id": "3045df148523a2db",
@@ -36,7 +40,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 400,
+        "y": 380,
         "wires": [
             [
                 "70a46388552d3428"
@@ -79,7 +83,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
+        "x": 900,
         "y": 320,
         "wires": []
     },
@@ -97,7 +101,7 @@
         "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
         "layout": "row-spread",
         "x": 930,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -115,7 +119,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
                 "c06112ce4793a5b9",
@@ -136,8 +140,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
-        "y": 480,
+        "x": 900,
+        "y": 460,
         "wires": []
     },
     {
@@ -153,7 +157,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "b0080288d01d77b7"
@@ -174,7 +178,84 @@
         "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
         "layout": "row-spread",
         "x": 930,
-        "y": 540,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a1bf14e5042aa68d",
+        "type": "mqtt in",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "",
+        "topic": "DisplayState",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3d66ad6c381a3af0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "e129ed9b23429587",
+                "bb03b73ad1fabdd2"
+            ]
+        ]
+    },
+    {
+        "id": "e129ed9b23429587",
+        "type": "function",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "function 5",
+        "func": "if (msg.payload == \"normal\") {\n    msg.color = \"green\";\n} else if (msg.payload == \"high\") {\n    msg.color = \"red\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 640,
+        "wires": [
+            [
+                "86b11b8cfca8ad13"
+            ]
+        ]
+    },
+    {
+        "id": "86b11b8cfca8ad13",
+        "type": "ui_text",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "group": "a6e358b.672ffa8",
+        "order": 5,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Display Water Level",
+        "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-spread",
+        "x": 940,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "bb03b73ad1fabdd2",
+        "type": "debug",
+        "z": "75b48f8a75686579",
+        "g": "47982c07aecfe4d1",
+        "name": "debug 23",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 580,
         "wires": []
     },
     {
