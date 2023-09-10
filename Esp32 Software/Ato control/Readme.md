@@ -16,9 +16,12 @@ There are also some 3 wire version available but finding a good example on using
    1. Version 2 was the first pubished version which was working but I was not happy with it.
    2. Version 3 has been changed so that it only uses 2 topics to send out the current state of the Sump ad the ATO barrel. it still controls the ato pump on pin 5 for 10 secods. I will be creating the flow changes as well and add them to the relevent folder in the next few days. This will also need a change to be made for the display module to use the new mqtt payloads. The new module is being tested now to check for bugs.
 
+----
 
+# Node Red Flow
 
-
+The latest version of flow I am using is now added which is used for a simple dash board.
+![Screenshot 2023-09-10 113945](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/fc2c957e-c755-41e9-a347-9f3cec7523bf)
 
 
 
