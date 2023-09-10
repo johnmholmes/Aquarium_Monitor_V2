@@ -13,17 +13,16 @@ const int DISP_LED_YELLOW = 17;
 const int DISP_LED_GREEN = 5;
 const int DISP_LED_RED = 18;
 
+const char* ATO_TOPIC = "AtoState";
+const char* SUMP_TOPIC = "SumpState";
+const char* DISPLAY_TOPIC ="DisplayState";
 
-const char* ATO_TOPIC = "AtoLowState";
-const char* SUMP_TOPIC = "AtoState";
-
-const char* currentSumpState = "";
-const char* currentAtoState = "";
+String currentSumpState = ""; // To store sump state
+String currentAtoState = "";  // To store ATO state
+String currentDisplayState = "";  // To store ATO state
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-
-
 
 void setup() {
   pinMode(ATO_LED_RED, OUTPUT);
@@ -37,7 +36,7 @@ void setup() {
   setup_wifi();
   client.setServer(MQTT_HOST, MQTT_PORT);
   client.setCallback(callback);
-} 
+}
 
 void setup_wifi() {
   delay(10);
@@ -52,72 +51,72 @@ void setup_wifi() {
     delay(500);
     Serial.print(".");
   }
-} 
+}
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  String message = ""; 
+  String message = "";
 
   if (strcmp(topic, ATO_TOPIC) == 0) {
     message = String((char*)payload, length);
-    atoLevel = (message == "Ato level Low") ? HIGH : LOW; // Ato level Low - Ato level OK
-    Serial.println(atoLevel);
+    currentAtoState = message;
+  } else if (strcmp(topic, SUMP_TOPIC) == 0) {
+    message = String((char*)payload, length);
+    currentSumpState = message;
+  }else if (strcmp(topic, DISPLAY_TOPIC) == 0) {
+    message = String((char*)payload, length);
+    currentSumpState = message;
   }
-
-
-
 
   updateLEDs();
 }
 
 void updateLEDs() {
-  // Output 1: sump yellow led
-  if (sumpLowLevel == HIGH && sumpHighLevel == HIGH) {
-    digitalWrite(SUMP_LED_GREEN, LOW);
-    digitalWrite(SUMP_LED_RED, LOW);
-    digitalWrite(SUMP_LED_YELLOW, HIGH);
-    }
-  // Output 2: sump green led
-  else if (sumpLowLevel == LOW && sumpHighLevel == HIGH) {
-    digitalWrite(SUMP_LED_GREEN, HIGH);
-    digitalWrite(SUMP_LED_YELLOW, LOW);
-    digitalWrite(SUMP_LED_RED, LOW);
-    }
-  // Output 3: sump red led
-  else if (sumpLowLevel == HIGH && sumpHighLevel == LOW) {
-    digitalWrite(SUMP_LED_GREEN, LOW);
-    digitalWrite(SUMP_LED_YELLOW, LOW);
-    digitalWrite(SUMP_LED_RED, HIGH);
-    }
-  // output 4: Ato red led
-  if (atoLevel == HIGH) {
+  // Control ATO LED on pin 16
+  if (currentAtoState == "low water") {
     digitalWrite(ATO_LED_RED, HIGH);
+  } 
+  if (currentAtoState == "high water") {
+    digitalWrite(ATO_LED_RED, LOW);
   }
-    else {
-      digitalWrite(ATO_LED_RED, LOW);
-    }
 
-  // output 5: Display leds
-  if (dispHighLevel == HIGH) {
-    digitalWrite(DISP_LED_RED, HIGH);
+  // Control SUMP LEDs on pins 15, 2, and 4
+  if (currentSumpState == "low") {
+    digitalWrite(SUMP_LED_YELLOW, HIGH);
+    digitalWrite(SUMP_LED_GREEN, LOW);
+    digitalWrite(SUMP_LED_RED, LOW);
+  } else if (currentSumpState == "normal") {
+    digitalWrite(SUMP_LED_YELLOW, LOW);
+    digitalWrite(SUMP_LED_GREEN, HIGH);
+    digitalWrite(SUMP_LED_RED, LOW);
+  } else if (currentSumpState == "high") {
+    digitalWrite(SUMP_LED_YELLOW, LOW);
+    digitalWrite(SUMP_LED_GREEN, LOW);
+    digitalWrite(SUMP_LED_RED, HIGH);
+  }
+
+  // control display leds on pins 17,5, and 18
+  if (currentDisplayState == "normal") {
+    digitalWrite(DISP_LED_YELLOW, LOW);
+    digitalWrite(DISP_LED_GREEN, HIGH);
+    digitalWrite(DISP_LED_RED, LOW);
+  } else if (currentDisplayState == "high"){
+    digitalWrite(DISP_LED_YELLOW, LOW);
     digitalWrite(DISP_LED_GREEN, LOW);
-  }
-    else {
-      digitalWrite(DISP_LED_RED, LOW);
-      digitalWrite(DISP_LED_GREEN, HIGH);
-
-    }
+    digitalWrite(DISP_LED_RED, HIGH);
   }
 
+}
 
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect("ESP32Client")) {
+    if (client.connect("ESP32Display")) {
       Serial.println("connected");
       client.subscribe(ATO_TOPIC);
-      client.subscribe(SUMP_HIGH_TOPIC);
-      client.subscribe(SUMP_LOW_TOPIC);
-      client.subscribe(DISP_HIGH_TOPIC);
+      client.subscribe(SUMP_TOPIC);
+      client.subscribe(DISPLAY_TOPIC);
+
+
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -132,4 +131,5 @@ void loop() {
     reconnect();
   }
   client.loop();
-} 
+}
+
