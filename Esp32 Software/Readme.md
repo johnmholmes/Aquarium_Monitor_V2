@@ -6,6 +6,8 @@ The ESP32 is a 3.3V device, which means that all of its input and output pins ar
 
 It's also important to note that the power supply for the ESP32 should be 3.3V DC. Some development boards or modules may have built-in voltage regulators that can accept a higher input voltage (such as 5V) and regulate it down to 3.3V for the ESP32, but it's always best to check the specifications of the specific device you are using to ensure proper voltage supply.
 
+Pins 34 35 can only be used as input pins
+
    1. The temperature modules I have two different units working on my system.
    2. The Ato unit is now added to the github following on from video 21.
    3. The simple display is also now uploaded but is going to be updated so this will see a number of versions.
