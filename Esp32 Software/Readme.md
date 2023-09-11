@@ -14,6 +14,8 @@ GPIO pins without internal pullup resistors are 13, 25-27. 32 and 33.
 
 GPIO pib=ns HIGH during boot are pins 1,,3, 5, 6-11, 14 & 15.
 
+See chat.openai.com/auth/login?next=%2Fchat
+
    1. The temperature modules I have two different units working on my system.
    2. The Ato unit is now added to the github following on from video 21.
    3. The simple display is also now uploaded but is going to be updated so this will see a number of versions.
