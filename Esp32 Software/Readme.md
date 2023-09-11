@@ -14,7 +14,7 @@ GPIO pins without internal pullup resistors are 13, 25-27. 32 and 33.
 
 GPIO pib=ns HIGH during boot are pins 1,,3, 5, 6-11, 14 & 15.
 
-See chat.openai.com/auth/login?next=%2Fchat
+See [chat.openai.com/auth/login?next=%2Fchat](https://www.flux.ai/p/blog/esp32-pinout-everything-you-need-to-know#:~:text=Is%20ESP32%203.3%20or%205V,maximum%20voltage%20of%203.3%20volts.)
 
    1. The temperature modules I have two different units working on my system.
    2. The Ato unit is now added to the github following on from video 21.
