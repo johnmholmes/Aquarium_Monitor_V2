@@ -1,6 +1,6 @@
 # ESP32 Sketches
 
-This folder will hold various skecthes as I create them for the Esp32 modules. 
+This folder will hold various skecthes as I create them for the Esp32 modules. It is important to understand the ESP32 is a 3.3 volt tolerant module so any relays need to be 3.3 volt logic to work.
 
    1. The temperature modules I have two different units working on my system.
    2. The Ato unit is now added to the github following on from video 21.
