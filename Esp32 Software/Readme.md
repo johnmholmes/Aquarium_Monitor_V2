@@ -8,6 +8,12 @@ It's also important to note that the power supply for the ESP32 should be 3.3V D
 
 Pins 34 35 can only be used as input pins
 
+GPIO pins with internal pullup resistors are 14, 16-23.
+
+GPIO pins without internal pullup resistors are 13, 25-27. 32 and 33.
+
+GPIO pib=ns HIGH during boot are pins 1,,3, 5, 6-11, 14 & 15.
+
    1. The temperature modules I have two different units working on my system.
    2. The Ato unit is now added to the github following on from video 21.
    3. The simple display is also now uploaded but is going to be updated so this will see a number of versions.
