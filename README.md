@@ -66,6 +66,8 @@ Subsequent components will be incorporated as the project progresses.
 # ESP32
 
 When working with ESP32 please be awear they are 3.3 volt logic devies sp you must ensure you do not try to input 5 volts into the input pins. and also you will need 3 volt logic relays for these projects. the common 5 volt ones will not trigger with the 3.3 volts I have found.
+
+-----
  
 # Work Completed
 
