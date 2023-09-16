@@ -9,6 +9,7 @@ const int pumpCutoff = 14;
 const int ledPin = 2;
 
 const char* MQTT_PUB_CUTOFF = "SkimmerState";
+const char* MQTT_PUB_RELAY = "SkimmerPower";
 const char* SKIMMER_HEART_TOPIC = "SkimmerHeartState";
 
 String currentSkimmerState = "";  // To store skimmer state
@@ -79,11 +80,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
 void controlPump() {
   if (currentSkimmerState == "skimmer high"){
     digitalWrite(pumpCutoff, HIGH);
+    mqttClient.publish(MQTT_PUB_RELAY, "Skimmer Relay Off");
     //digitalWrite(ledPin, HIGH);
     
   }
   if (currentSkimmerState == "skimmer normal") {
     digitalWrite(pumpCutoff, LOW);
+    mqttClient.publish(MQTT_PUB_RELAY, "Skimmer Relay On");
     //digitalWrite(ledPin, LOW);
   }
 }
