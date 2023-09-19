@@ -12,13 +12,14 @@
 
 const char* MQTT_PUB_TEMP = "backupHeaterControl"; // Temperature MQTT Topic
 const char* MQTT_PUB_HEAT = "backupHeaterStatus";  // Heater Status MQTT Topic
+const char* MQTT_PUB_BOOT = "restart";  // reboot message
 const int oneWireBus = 4;
 unsigned long previousMillis = 0;
 unsigned long thenMillis = 0;
 const long interval = 10000;
 const long interval1 = 15000;
 float temp = 0.0;
-float minTempThreshold = 24.6;
+float minTempThreshold = 24.0;
 float maxTempThreshold = 25.0;
 
 const int heaterPin = 23;
@@ -36,6 +37,7 @@ PubSubClient mqttClient(espClient);
 
 void espRebootTimer() {
   if ((millis() % restartTimer) < 2000) {
+    mqttClient.publish(MQTT_PUB_BOOT, "restarted");
     if (minTempThreshold != lastMinTempThreshold || maxTempThreshold != lastMaxTempThreshold) {
       EEPROM.write(0, int(minTempThreshold ));
       EEPROM.write(1, int(maxTempThreshold ));
