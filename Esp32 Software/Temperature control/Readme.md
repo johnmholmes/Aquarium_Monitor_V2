@@ -25,7 +25,7 @@ Version 1 did not get uploaded so we start with:
 7. Version 1g. This version has done away with the AsycnMqtt library and just uses the #include <PubSubClient.h> libaray This now is almost the project completed
 8. Version 1h. This version is the final installment for this module, it now has if any changes to the 2 varibles these will be saved to the EEprom and a reboot timer to avoid the roll over of the millis() function timer. The changes to the variable will be applied on startup of the ESP32.
 9. Version 1J. Adressed an issues with the EEPROM routine which caused an issues this has been addressed and now the controller module is working, however it can control the tank temperature to within a few decimal places. Storing the changes in EEPROM and restoring them is more difficult. I have this code at the moment rebooting everyday to make sure it is stable I have also fixed the spikes in the grap on Node red. This is done by changing the names of the mqtt topics, as the previous Asyncmqtt library had left some previuos data on my Raspberry Pi.
-10. Version 1K. This has just had a reconnect to wifi if the wifi was lost. This was dicovered as I noticed we did not receive a reading for a few hours in the graph. The module was still doing what it needed so was not an issue.
+10. Version 1K. This has just had a reconnect to wifi if the wifi was lost. This was dicovered as I noticed we did not receive a reading for a few hours in the graph. The module was still doing what it needed so was not an issue. Also added a mqtt message to let me know when it is rebooted. which will be displayed in node red dashboard.
 
 --------------
 # Version 1 Main Temperature monitor module The esp32_Main_Temp_v1
