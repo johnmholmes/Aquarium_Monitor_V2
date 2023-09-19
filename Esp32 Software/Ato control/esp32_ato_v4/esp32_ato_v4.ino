@@ -73,7 +73,7 @@ void readAndDetermineStates() {
     currentSumpState = "low";
   } else if (sumpLowValue == LOW && sumpHighValue == HIGH) {
     currentSumpState = "normal";
-  } else if (sumpLowValue == LOW && sumpHighValue == LOW) {
+  } else if (sumpHighValue == LOW) {
     currentSumpState = "high";
   }
 
