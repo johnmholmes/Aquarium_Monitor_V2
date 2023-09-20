@@ -106,7 +106,6 @@ void setup() {
   mqttClient.setServer(MQTT_HOST, MQTT_PORT);
   mqttClient.setCallback(callback);
   mqttClient.setKeepAlive(60);  // Adjust as needed (e.g., 60 seconds)
-
   
 }
 
@@ -125,8 +124,5 @@ void loop() {
   controlPump();
   mqttClient.publish(MQTT_PUB_SUMP, currentSumpState);
   mqttClient.publish(MQTT_PUB_ATO, currentAtoState);
-
-  
-
   delay(10000);
 }
