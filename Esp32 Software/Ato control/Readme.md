@@ -13,6 +13,7 @@ These units will need to be cleaned every now and then to make sure they keep gi
 ![Screenshot 2023-09-09 194709](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/ccd80f84-2e46-4943-81f1-084951e1fe7c)
 
 
+![Screenshot 2023-09-23 085514](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/f563934d-137a-4146-9775-08bda36aef83)
 
 There are also some 3 wire version available but finding a good example on using them seems very hard to find. The ones I got had different colours compared to some i seen on the ebay listing.
 
