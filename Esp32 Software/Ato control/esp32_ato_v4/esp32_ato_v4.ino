@@ -8,11 +8,13 @@
 const char* MQTT_PUB_SUMP = "SumpState";
 const char* MQTT_PUB_ATO = "AtoState";
 const char* MQTT_SUB_ATO_OVERRIDE = "atoOverride"; 
+const char* MQTT_SUB_ATO_HEARTBEAT = "atoHeartBeat"; 
 
 const int sumpLowPin = 13;
 const int sumpHighPin = 12;
 const int atoLowPin = 27;
 const int pump = 5;
+const int ledPin = 2;
 
 const char* currentSumpState = "";
 const char* currentAtoState = "";
@@ -36,6 +38,7 @@ void connectToMqtt() {
     if (mqttClient.connect("johnsClient2")) {
       Serial.println("Connected to MQTT broker");
       mqttClient.subscribe(MQTT_SUB_ATO_OVERRIDE);
+      mqttClient.subscribe(MQTT_SUB_ATO_HEARTBEAT);
     } else {
       Serial.print("Failed, rc=");
       Serial.print(mqttClient.state());
@@ -58,6 +61,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
       digitalWrite(pump, HIGH);
       delay(5000);
       digitalWrite(pump, LOW);
+    
+  }
+
+    if (message == "heartbeat") {
+      // Turn on the led for 200ms
+      digitalWrite(ledPin, HIGH);
+      delay(200);
+      digitalWrite(ledPin, LOW);
     
   }
 }
@@ -100,8 +111,10 @@ void setup() {
   pinMode(sumpHighPin, INPUT_PULLUP);
   pinMode(atoLowPin, INPUT_PULLUP);
   pinMode(pump, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 
   digitalWrite(pump, LOW);
+  digitalWrite(ledPin, LOW);
   connectToWifi();
   mqttClient.setServer(MQTT_HOST, MQTT_PORT);
   mqttClient.setCallback(callback);
