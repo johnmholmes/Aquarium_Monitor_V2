@@ -26,10 +26,8 @@ There are also some 3 wire version available but finding a good example on using
 
 The latest version of the flow I am using is now added which is used for a simple dash board.
 
-![Screenshot 2023-09-10 113945](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/fc2c957e-c755-41e9-a347-9f3cec7523bf)
 
-
-
+![Screenshot 2023-09-24 232544](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/4d9997c0-771f-43fb-87eb-4d3d216533e1)
 
 
 
