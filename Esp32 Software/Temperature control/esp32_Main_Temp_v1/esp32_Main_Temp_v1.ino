@@ -29,7 +29,7 @@ float temperature3 = 0;
 unsigned long previousMillis = 0;
 unsigned long previousMillis1 = 0;
 unsigned long previousMillis2 = 0;
-const long interval = 180000;  // Interval in milliseconds (3 minutes which will make the graph more useful)
+const long interval = 60000;  // Interval in milliseconds (1 minutes which will make the graph more useful)
 const long intervalTog = 10000; 
 WiFiClient espClient;
 PubSubClient client(espClient);
