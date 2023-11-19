@@ -8,7 +8,7 @@ Please beaware I may well change my approach to this project but will leave the 
 
  # Latest News Will Appear Here
 
-19 Movember Update testing is still taking place whole I am away from home a lot at the moment. More updates to follow in the next few weeks.
+19 November Update testing is still taking place whole I am away from home a lot at the moment. More updates to follow in the next few weeks.
 
 I have reached a decision to alter my approach for version 2 of the controller. Recent days of research have drawn my attention to the DS18B20 sensors and the potential issues they can introduce when connected to the Raspberry Pi. While I personally haven't encountered these issues, I believe it's prudent to consider them in my design and strategy.
 
