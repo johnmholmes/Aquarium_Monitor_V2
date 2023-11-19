@@ -94,15 +94,17 @@ I have also sorted out the text message alearts which will be shown in video 20 
 
 # Auto Top Off
 
-The Ato module is funtioning now and testing is underway I will evaluate more in 1 weeks time as I tend to come up with better sloutions during the test stages.
+19 November 2023 Update
+
+The unit has been on test for a few months now and I am modifying the sketch as I have come across an issue with re-connecting to the MQTT client after a wifi outage. The issue I think is due to the if statement in the main loop() of version 4. This modification will be held until I can fully test this out.
 
 ----
 # To Be Started
 
 1. Display tank water level monitor to prevent over fill it will control one of the return pumps module.
 2. Leak detection module.
-3. Skimmer over flow container cut off module.
-4. Visual display via LEDs above the tank.
+3. Skimmer over flow container cut off module. Under testing and working fine.
+4. Visual display via LEDs above the tank. Under testing and working fine.
 5. Ph monitor module. This I have tried before, but may revisit this project again as it could be handy if it gives consistant results.
 6. 24 volt distrobution module. (Currently I have 4 devices that run on 24 volt, each has its own power tranformer. This module would use one wall brick transformer with an out put of 5 Amps which would use an Esp32 to turn on and off pumps and wave makers as required.)
 7. Possible current monitoring of various devices to prodict failures.
