@@ -1,20 +1,5 @@
-# Node Red
+# Node Red Flow
 
-Node Red is a powerfool tool and is freely available for the Raspberry Pi it makes programming it easier and I will cover this in this repository.
+I have a number of flows in Node red
 
-Once the Raspberry Pi for is setup for the first time we can use the following lines of code to get the latest version of Node Red.
-
-You need to open the comand line and copy and paste the following.
-
-    bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
-
-Follow the on screen prompts I answered yes.
-
-You then need to copy and paste the following to start Node Red on Boot Up of the Raspberyy Pi 4.
-
-    sudo systemctl enable nodered.service
-
-More details can be seen in this video I made https://youtu.be/31TqqJM__X4
-
------
-
+![main temp flow](https://github.com/johnmholmes/Aquarium_Monitor_V2/assets/60571002/a969e487-b89a-4d41-877d-0820b7b9a77a)
