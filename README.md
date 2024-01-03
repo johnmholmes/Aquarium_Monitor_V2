@@ -1,3 +1,8 @@
+# See The Wiki Tab
+
+- I am starting to use the wiki tab from January 2024.
+
+
 #  Aquarium Monitor V2: The Raspberry Pi 4 4GB - Next Generation of My Marine Tank Monitor
 
 In this project, I will document my progress in designing and implementing the next generation of my marine tank monitor / controller using the Raspberry Pi 4 with 4GB of RAM. This documentation will serve as a future reference, allowing me to easily revisit and make any necessary changes to the system. Moreover, I am sharing this journey with others, enabling them to embark on similar endeavors.
